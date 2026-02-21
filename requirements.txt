@@ -1,0 +1,8 @@
+numpy>=1.21
+scipy>=1.7
+h5py>=3.0
+snirf>=0.5
+PyQt5>=5.15
+pyqtgraph>=0.12
+matplotlib>=3.5
+pandas>=1.4
