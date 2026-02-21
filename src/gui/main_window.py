@@ -147,9 +147,9 @@ class MainWindow(QMainWindow):
 
         view_menu = menu_bar.addMenu("&View")
         loader_menu = view_menu.addMenu("SNIRF &Loader")
-        self._loader_lib_action = QAction("snirf library (Method A)", self, checkable=True)
-        self._loader_h5py_action = QAction("h5py raw (Method B)", self, checkable=True)
-        self._loader_lib_action.setChecked(True)
+        self._loader_lib_action = QAction("[Alternative] snirf library", self, checkable=True)
+        self._loader_h5py_action = QAction("h5py (Default)", self, checkable=True)
+        self._loader_h5py_action.setChecked(True)
         self._loader_lib_action.triggered.connect(lambda: self._switch_loader("snirf-library"))
         self._loader_h5py_action.triggered.connect(lambda: self._switch_loader("h5py-raw"))
         loader_menu.addAction(self._loader_lib_action)

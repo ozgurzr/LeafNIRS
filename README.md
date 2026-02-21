@@ -17,30 +17,20 @@ A Python-based **fNIRS Brain Mapping Tool** for signal processing and visualizat
 
 ## Features
 
-- **Dual SNIRF Loader** — Load `.snirf` files via the `snirf` library (Method A) or raw `h5py` (Method B, 2x faster)
-- **Dark-Themed GUI** — Professional PyQt5 interface with interactive PyQtGraph plotting
-- **Channel Grouping** — Channels organized by source-detector pair with per-wavelength toggles
-- **Wavelength Filter** — Instantly filter by 760 nm, 850 nm, or both
-- **Signal Quality Assessment** — Automatic CV-based flagging of OK, flat, and noisy channels
-- **Stacked / Overlaid Views** — Compare channel waveforms side-by-side or overlaid
-- **Comprehensive Test Suite** — 30+ tests validated against real OpenNeuro ds007420 data
+- SNIRF / HDF5 file loading with dual loader options
+- Dark-themed interactive GUI with real-time channel plotting
+- Source-detector pair grouping with wavelength filtering
+- Automatic signal quality assessment
+- Stacked and overlaid view modes
 
 ## Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/LeafNIRS.git
+git clone https://github.com/ozgurzr/LeafNIRS.git
 cd LeafNIRS
-
-# Create and activate virtual environment
 python -m venv venv
-.\venv\Scripts\Activate.ps1      # Windows PowerShell
-# source venv/bin/activate       # macOS / Linux
-
-# Install dependencies
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-
-# Launch
 python run.py
 ```
 
@@ -48,17 +38,7 @@ Then use **File → Open SNIRF…** to load a `.snirf` file.
 
 ## Running Tests
 
-Tests require real SNIRF data from [OpenNeuro ds007420](https://openneuro.org/datasets/ds007420). Place the data in a `fNIRS_1/` folder next to `LeafNIRS/`:
-
-```
-parent_folder/
-├── LeafNIRS/       ← this repo
-└── fNIRS_1/        ← SNIRF data here
-    └── sub-170/
-        └── ses-01/
-            └── nirs/
-                └── *.snirf
-```
+Tests require `.snirf` data files. Place any SNIRF dataset in a `fNIRS_1/` folder next to the repo:
 
 ```bash
 python -m pytest tests/test_snirf_loaders.py -v
@@ -66,7 +46,7 @@ python -m pytest tests/test_snirf_loaders.py -v
 
 ## Project Structure
 
-```
+```text
 LeafNIRS/
 ├── run.py                          # Entry point
 ├── requirements.txt
@@ -98,17 +78,6 @@ LeafNIRS/
 | **3** | Modified Beer-Lambert Law (HbO / HbR) | 🔜 Planned |
 | **4** | 3D brain mapping & topographic display | 🔜 Planned |
 | **5** | Statistical analysis & export | 🔜 Planned |
-
-## Team
-
-| Role | Name |
-|------|------|
-| Developer | Ali Umut Sezgin |
-| Developer | Arda Telci |
-| Developer | Özgür Efe Zurnaci |
-| Supervisor | Prof. Dr. Ata Akin |
-
-**Acibadem Mehmet Ali Aydinlar University** — Department of Biomedical Engineering
 
 ## License
 
