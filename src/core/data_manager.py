@@ -1,4 +1,9 @@
-"""DataManager — Holds loaded SNIRF data and coordinates loader selection."""
+"""
+DataManager — Central data hub for the application.
+
+Holds the currently loaded SNIRFData and emits Qt signals when the
+data changes so that all GUI panels can react.
+"""
 from __future__ import annotations
 
 from PyQt5.QtCore import QObject, pyqtSignal
@@ -9,42 +14,50 @@ from data_io.snirf_loader_h5py import SNIRFLoaderH5py
 
 
 class DataManager(QObject):
-    """Manages the currently loaded SNIRF file and loader selection."""
+    """Manages loaded fNIRS data and notifies listeners on changes."""
 
-    data_loaded = pyqtSignal(object)   # emits SNIRFData
+    # Signals
+    data_loaded = pyqtSignal(object)    # emits SNIRFData
     data_cleared = pyqtSignal()
-    error_occurred = pyqtSignal(str)
+    error_occurred = pyqtSignal(str)    # emits error message
 
     def __init__(self, parent=None):
         super().__init__(parent)
         self._data: SNIRFData | None = None
-        self._loaders = {
-            'snirf-library': SNIRFLoaderLib(),
-            'h5py-raw': SNIRFLoaderH5py(),
-        }
-        self._active_loader = 'h5py-raw'
+        # Default to h5py loader (more reliable); can be swapped
+        self._loader = SNIRFLoaderH5py()
+
+    # ── Public API ────────────────────────────
 
     @property
     def data(self) -> SNIRFData | None:
         return self._data
 
     @property
-    def active_loader_name(self) -> str:
-        return self._active_loader
+    def has_data(self) -> bool:
+        return self._data is not None
 
-    def set_loader(self, name: str):
-        if name in self._loaders:
-            self._active_loader = name
+    def use_loader(self, loader_name: str):
+        """Switch between 'snirf-library' and 'h5py-raw'."""
+        if loader_name == "h5py-raw":
+            self._loader = SNIRFLoaderH5py()
+        else:
+            self._loader = SNIRFLoaderLib()
 
-    def load_file(self, filepath: str):
+    def load_file(self, filepath: str) -> bool:
+        """
+        Load a SNIRF file.  Returns True on success.
+        Emits `data_loaded` on success or `error_occurred` on failure.
+        """
         try:
-            loader = self._loaders[self._active_loader]
-            self._data = loader.load(filepath)
+            self._data = self._loader.load(filepath)
             self.data_loaded.emit(self._data)
-        except Exception as e:
+            return True
+        except Exception as exc:
             self._data = None
-            self.error_occurred.emit(str(e))
+            self.error_occurred.emit(str(exc))
+            return False
 
-    def close_file(self):
+    def clear(self):
         self._data = None
         self.data_cleared.emit()
