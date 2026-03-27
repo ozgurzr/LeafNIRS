@@ -2,10 +2,10 @@
 ProcessingPanel — GUI controls for the fNIRS signal processing pipeline.
 
 Provides Auto/Manual mode toggle:
-- Auto: OD + bandpass applied automatically on file load with standard defaults
+- Auto: OD + bandpass + MBLL applied automatically on file load
 - Manual: User configures parameters and clicks Apply
 
-Always provides view switching (Raw / OD / Filtered) and Reset.
+Always provides view switching (Raw / OD / Filtered / HbO-HbR) and Reset.
 """
 from __future__ import annotations
 
@@ -29,10 +29,12 @@ class ProcessingPanel(QWidget):
     # Signals emitted to main window
     convert_od_clicked = pyqtSignal()
     apply_filter_clicked = pyqtSignal(float, float, int)  # low, high, order
+    convert_conc_clicked = pyqtSignal()
     reset_clicked = pyqtSignal()
     view_raw_clicked = pyqtSignal()
     view_od_clicked = pyqtSignal()
     view_filtered_clicked = pyqtSignal()
+    view_conc_clicked = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -77,14 +79,13 @@ class ProcessingPanel(QWidget):
             )
         self._btn_auto.setChecked(True)
         self._btn_auto.setToolTip(
-            "Auto: OD + bandpass applied automatically on file load\n"
+            "Auto: OD + bandpass + MBLL applied on file load\n"
             "Uses standard defaults (0.01–0.1 Hz, order 3)"
         )
         self._btn_manual.setToolTip(
             "Manual: Configure parameters and click Apply"
         )
 
-        # Exclusive toggle
         self._btn_auto.clicked.connect(self._on_auto_clicked)
         self._btn_manual.clicked.connect(self._on_manual_clicked)
 
@@ -110,11 +111,14 @@ class ProcessingPanel(QWidget):
         self._badge_raw = self._make_badge("RAW", active=False)
         self._badge_od = self._make_badge("OD", active=False)
         self._badge_filt = self._make_badge("FILT", active=False)
+        self._badge_conc = self._make_badge("HbO/R", active=False)
         badge_row.addWidget(self._badge_raw)
         badge_row.addWidget(QLabel("→"))
         badge_row.addWidget(self._badge_od)
         badge_row.addWidget(QLabel("→"))
         badge_row.addWidget(self._badge_filt)
+        badge_row.addWidget(QLabel("→"))
+        badge_row.addWidget(self._badge_conc)
         state_layout.addLayout(badge_row)
 
         layout.addWidget(state_group)
@@ -146,7 +150,6 @@ class ProcessingPanel(QWidget):
         filter_layout = QVBoxLayout(filter_group)
         filter_layout.setSpacing(4)
 
-        # Low cutoff
         row1 = QHBoxLayout()
         row1.addWidget(QLabel("Low (Hz):"))
         self._spin_low = QDoubleSpinBox()
@@ -158,7 +161,6 @@ class ProcessingPanel(QWidget):
         row1.addWidget(self._spin_low)
         filter_layout.addLayout(row1)
 
-        # High cutoff
         row2 = QHBoxLayout()
         row2.addWidget(QLabel("High (Hz):"))
         self._spin_high = QDoubleSpinBox()
@@ -170,7 +172,6 @@ class ProcessingPanel(QWidget):
         row2.addWidget(self._spin_high)
         filter_layout.addLayout(row2)
 
-        # Filter order
         row3 = QHBoxLayout()
         row3.addWidget(QLabel("Order:"))
         self._spin_order = QSpinBox()
@@ -180,7 +181,6 @@ class ProcessingPanel(QWidget):
         row3.addWidget(self._spin_order)
         filter_layout.addLayout(row3)
 
-        # Apply button
         self._btn_apply_filter = QPushButton("Apply Bandpass Filter")
         self._btn_apply_filter.setStyleSheet(
             "QPushButton { background-color: #094771; color: #e5e5e5; "
@@ -192,9 +192,26 @@ class ProcessingPanel(QWidget):
         filter_layout.addWidget(self._btn_apply_filter)
         manual_layout.addWidget(filter_group)
 
-        layout.addWidget(self._manual_frame)
+        # MBLL Concentration
+        conc_group = QGroupBox("3. MBLL (HbO / HbR)")
+        conc_layout = QVBoxLayout(conc_group)
 
-        # Hide manual controls by default (Auto mode)
+        self._btn_convert_conc = QPushButton("Convert to HbO / HbR")
+        self._btn_convert_conc.setToolTip(
+            "Modified Beer-Lambert Law\n"
+            "Converts OD → ΔHbO + ΔHbR concentration (μmol/L)"
+        )
+        self._btn_convert_conc.setStyleSheet(
+            "QPushButton { background-color: #5a1a5a; color: #e5e5e5; "
+            "padding: 8px; border-radius: 4px; font-weight: bold; }"
+            "QPushButton:hover { background-color: #7a237a; }"
+            "QPushButton:disabled { background-color: #2d2d30; color: #666; }"
+        )
+        self._btn_convert_conc.clicked.connect(self.convert_conc_clicked.emit)
+        conc_layout.addWidget(self._btn_convert_conc)
+        manual_layout.addWidget(conc_group)
+
+        layout.addWidget(self._manual_frame)
         self._manual_frame.setVisible(False)
 
         # ── View Switcher ──
@@ -204,11 +221,13 @@ class ProcessingPanel(QWidget):
 
         self._btn_view_raw = QPushButton("Raw")
         self._btn_view_od = QPushButton("OD")
-        self._btn_view_filt = QPushButton("Filtered")
-        for btn in (self._btn_view_raw, self._btn_view_od, self._btn_view_filt):
+        self._btn_view_filt = QPushButton("Filt")
+        self._btn_view_conc = QPushButton("HbO/R")
+        for btn in (self._btn_view_raw, self._btn_view_od,
+                    self._btn_view_filt, self._btn_view_conc):
             btn.setCheckable(True)
             btn.setStyleSheet(
-                "QPushButton { padding: 4px 8px; border-radius: 3px; "
+                "QPushButton { padding: 4px 6px; border-radius: 3px; "
                 "background-color: #3e3e42; color: #abb2bf; }"
                 "QPushButton:checked { background-color: #094771; color: #fff; }"
                 "QPushButton:disabled { background-color: #2d2d30; color: #555; }"
@@ -219,6 +238,7 @@ class ProcessingPanel(QWidget):
         self._btn_view_raw.clicked.connect(self.view_raw_clicked.emit)
         self._btn_view_od.clicked.connect(self.view_od_clicked.emit)
         self._btn_view_filt.clicked.connect(self.view_filtered_clicked.emit)
+        self._btn_view_conc.clicked.connect(self.view_conc_clicked.emit)
 
         layout.addWidget(view_group)
 
@@ -280,15 +300,21 @@ class ProcessingPanel(QWidget):
         """Enable/disable all controls."""
         self._btn_convert_od.setEnabled(enabled)
         self._btn_apply_filter.setEnabled(enabled)
+        self._btn_convert_conc.setEnabled(enabled)
         self._btn_reset.setEnabled(enabled)
         self._btn_view_raw.setEnabled(enabled)
         self._btn_view_od.setEnabled(False)
         self._btn_view_filt.setEnabled(False)
+        self._btn_view_conc.setEnabled(False)
         if not enabled:
             self._state_label.setText("No data loaded")
             self._update_badges("RAW")
 
-    def update_state(self, state_label: str, has_od: bool, has_filtered: bool):
+    def update_state(
+        self, state_label: str,
+        has_od: bool, has_filtered: bool,
+        has_concentration: bool = False,
+    ):
         """Update the panel to reflect the current pipeline state."""
         self._state_label.setText(state_label)
 
@@ -296,14 +322,18 @@ class ProcessingPanel(QWidget):
         self._btn_view_raw.setEnabled(True)
         self._btn_view_od.setEnabled(has_od)
         self._btn_view_filt.setEnabled(has_filtered)
+        self._btn_view_conc.setEnabled(has_concentration)
 
         # Update checked states
         self._btn_view_raw.setChecked(state_label == "Raw Intensity")
         self._btn_view_od.setChecked(state_label == "Optical Density")
         self._btn_view_filt.setChecked(state_label == "Filtered OD")
+        self._btn_view_conc.setChecked(state_label == "HbO / HbR")
 
         # Update badges
-        if "Filtered" in state_label:
+        if "HbO" in state_label:
+            self._update_badges("CONC")
+        elif "Filtered" in state_label:
             self._update_badges("FILT")
         elif "Optical" in state_label:
             self._update_badges("OD")
@@ -311,6 +341,7 @@ class ProcessingPanel(QWidget):
             self._update_badges("RAW")
 
     def _update_badges(self, active: str):
-        self._style_badge(self._badge_raw, active in ("RAW", "OD", "FILT"))
-        self._style_badge(self._badge_od, active in ("OD", "FILT"))
-        self._style_badge(self._badge_filt, active == "FILT")
+        self._style_badge(self._badge_raw, active in ("RAW", "OD", "FILT", "CONC"))
+        self._style_badge(self._badge_od, active in ("OD", "FILT", "CONC"))
+        self._style_badge(self._badge_filt, active in ("FILT", "CONC"))
+        self._style_badge(self._badge_conc, active == "CONC")

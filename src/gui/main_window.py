@@ -266,6 +266,7 @@ class MainWindow(QMainWindow):
         # Processing panel signals
         self._processing_panel.convert_od_clicked.connect(self._on_convert_od)
         self._processing_panel.apply_filter_clicked.connect(self._on_apply_filter)
+        self._processing_panel.convert_conc_clicked.connect(self._on_convert_concentration)
         self._processing_panel.reset_clicked.connect(self._on_reset_processing)
         self._processing_panel.view_raw_clicked.connect(
             lambda: self._on_switch_view(PipelineState.RAW))
@@ -273,6 +274,8 @@ class MainWindow(QMainWindow):
             lambda: self._on_switch_view(PipelineState.OD))
         self._processing_panel.view_filtered_clicked.connect(
             lambda: self._on_switch_view(PipelineState.FILTERED))
+        self._processing_panel.view_conc_clicked.connect(
+            lambda: self._on_switch_view(PipelineState.CONCENTRATION))
 
     # ══════════════════════════════════════════
     #  Slots / Handlers
@@ -294,7 +297,10 @@ class MainWindow(QMainWindow):
 
     def _on_data_loaded(self, data):
         self._current_data = data
-        self._pipeline = ProcessingPipeline(data.intensity, data.sampling_rate)
+        self._pipeline = ProcessingPipeline(
+            data.intensity, data.sampling_rate,
+            channels=data.channels, probe=data.probe,
+        )
         self._file_info.update_info(data)
         self._graph.plot_data(data)
         self._processing_panel.set_enabled(True)
@@ -307,13 +313,14 @@ class MainWindow(QMainWindow):
                 high = self._processing_panel.filter_high
                 order = self._processing_panel.filter_order
                 self._pipeline.apply_bandpass(low=low, high=high, order=order)
-                self._graph.update_data(
-                    self._pipeline.result.active_data,
-                    self._current_data,
-                    self._pipeline.result.state_label,
+                # Auto-apply MBLL for HbO/HbR
+                self._pipeline.convert_to_concentration()
+                r = self._pipeline.result
+                self._graph.plot_concentration(
+                    r.hbo, r.hbr, self._current_data, r.pair_labels,
                 )
                 self._update_status(
-                    f"Loaded: {fname} — auto-processed (OD + bandpass {low}–{high} Hz)"
+                    f"Loaded: {fname} — auto-processed (OD + filter + HbO/HbR)"
                 )
             except Exception as e:
                 # Fall back to raw if auto-processing fails
@@ -409,6 +416,23 @@ class MainWindow(QMainWindow):
         except Exception as e:
             self._on_error(f"Filter failed: {e}")
 
+    def _on_convert_concentration(self):
+        if not self._pipeline:
+            return
+        self._update_status("Converting to HbO/HbR concentrations (MBLL)...")
+        try:
+            self._pipeline.convert_to_concentration()
+            r = self._pipeline.result
+            self._graph.plot_concentration(
+                r.hbo, r.hbr, self._current_data, r.pair_labels,
+            )
+            self._sync_processing_state()
+            self._update_status(
+                f"MBLL: {len(r.pair_labels)} S-D pairs → HbO/HbR"
+            )
+        except Exception as e:
+            self._on_error(f"MBLL conversion failed: {e}")
+
     def _on_reset_processing(self):
         if not self._pipeline:
             return
@@ -422,11 +446,17 @@ class MainWindow(QMainWindow):
             return
         try:
             self._pipeline.set_view(state)
-            self._graph.update_data(
-                self._pipeline.result.active_data,
-                self._current_data,
-                self._pipeline.result.state_label,
-            )
+            r = self._pipeline.result
+            if state == PipelineState.CONCENTRATION:
+                self._graph.plot_concentration(
+                    r.hbo, r.hbr, self._current_data, r.pair_labels,
+                )
+            else:
+                self._graph.update_data(
+                    r.active_data,
+                    self._current_data,
+                    r.state_label,
+                )
             self._sync_processing_state()
         except ValueError:
             pass  # Data not available for this view
@@ -438,6 +468,7 @@ class MainWindow(QMainWindow):
                 r.state_label,
                 has_od=r.od is not None,
                 has_filtered=r.filtered is not None,
+                has_concentration=r.hbo is not None,
             )
 
     # ── Helpers ───────────────────────────────

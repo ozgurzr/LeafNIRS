@@ -418,6 +418,7 @@ class GraphWidget(QWidget):
         )
 
         self._plot_array = data.intensity  # active data for plotting
+        self._conc_mode = False  # not in concentration mode
         self._refresh_curves()
 
     def update_data(self, new_array, snirf_data, title_prefix: str):
@@ -440,6 +441,120 @@ class GraphWidget(QWidget):
         )
         self._refresh_curves()
 
+    def plot_concentration(
+        self, hbo: 'np.ndarray', hbr: 'np.ndarray',
+        snirf_data: SNIRFData, pair_labels: list[str],
+    ):
+        """Plot HbO/HbR concentration time-series.
+
+        Unlike raw/OD/filtered plotting which uses per-channel data,
+        concentration data is per S-D pair with HbO and HbR arrays.
+
+        Parameters
+        ----------
+        hbo : ndarray, shape (n_time, n_pairs)
+            ΔHbO concentration (μmol/L).
+        hbr : ndarray, shape (n_time, n_pairs)
+            ΔHbR concentration (μmol/L).
+        snirf_data : SNIRFData
+            Original data (for time axis).
+        pair_labels : list of str
+            Labels like ['S1-D1', 'S1-D2', ...].
+        """
+        self._plot.clear()
+        self._curves.clear()
+        self._clear_pair_list()
+        self._data = snirf_data
+        self._plot_array = hbo  # keep reference
+
+        n_pairs = hbo.shape[1]
+        time = snirf_data.time
+
+        # Store HbR for access during refresh
+        self._hbr_array = hbr
+        self._conc_mode = True
+
+        # Create curves — two per pair (HbO + HbR)
+        _HBO_COLOR = "#e06c75"  # red
+        _HBR_COLOR = "#61afef"  # blue
+
+        shown = min(n_pairs, _DEFAULT_PAIRS_SHOWN)
+        for i in range(n_pairs):
+            visible = i < shown
+
+            # HbO curve
+            pen_hbo = pg.mkPen(color=_HBO_COLOR, width=1.5 if visible else 1)
+            curve_hbo = self._plot.plot(
+                time, hbo[:, i], pen=pen_hbo, name=f"{pair_labels[i]} HbO",
+                clipToView=True, downsample=True, downsampleMethod='peak',
+            )
+            if not visible:
+                curve_hbo.setData([], [])
+
+            # HbR curve
+            pen_hbr = pg.mkPen(color=_HBR_COLOR, width=1.5 if visible else 1)
+            curve_hbr = self._plot.plot(
+                time, hbr[:, i], pen=pen_hbr, name=f"{pair_labels[i]} HbR",
+                clipToView=True, downsample=True, downsampleMethod='peak',
+            )
+            if not visible:
+                curve_hbr.setData([], [])
+
+            # Store curves with special keying
+            self._curves[i * 2] = curve_hbo
+            self._curves[i * 2 + 1] = curve_hbr
+
+            # Create a simple pair checkbox
+            pw = _ConcentrationPairWidget(
+                pair_labels[i], i, checked=visible, parent=self._pair_list,
+            )
+            pw.toggled.connect(lambda idx=i: self._refresh_conc_curves())
+            self._pair_widgets.append(pw)
+            self._pair_list_layout.addWidget(pw)
+
+        self._title.setText(
+            f"  HbO / HbR — {n_pairs} S-D pairs (μmol/L)"
+        )
+        self._quality_label.setText(
+            f"Showing first {shown} of {n_pairs} pairs  ·  "
+            f"Red = HbO  ·  Blue = HbR"
+        )
+
+        self._plot.setLabel('left', 'Concentration', units='μmol/L')
+        self._plot.setLabel('bottom', 'Time', units='s')
+
+        try:
+            self._plot.getPlotItem().getViewBox().autoRange()
+        except Exception:
+            pass
+
+    def _refresh_conc_curves(self):
+        """Refresh concentration curves based on pair checkboxes."""
+        if not hasattr(self, '_conc_mode') or not self._conc_mode:
+            return
+
+        hbo = self._plot_array
+        hbr = self._hbr_array
+        time = self._data.time
+
+        for pw in self._pair_widgets:
+            if not isinstance(pw, _ConcentrationPairWidget):
+                continue
+            i = pw.pair_idx
+            visible = pw.is_checked()
+            curve_hbo = self._curves.get(i * 2)
+            curve_hbr = self._curves.get(i * 2 + 1)
+            if curve_hbo:
+                if visible:
+                    curve_hbo.setData(time, hbo[:, i])
+                else:
+                    curve_hbo.setData([], [])
+            if curve_hbr:
+                if visible:
+                    curve_hbr.setData(time, hbr[:, i])
+                else:
+                    curve_hbr.setData([], [])
+
     def clear_plot(self):
         self._plot.clear()
         self._curves.clear()
@@ -447,6 +562,7 @@ class GraphWidget(QWidget):
         self._title.setText("  Raw Optical Intensity")
         self._quality_label.setText("")
         self._data = None
+        self._conc_mode = False
 
     # ══════════════════════════════════════════
     #  Quality Computation
@@ -563,3 +679,46 @@ class GraphWidget(QWidget):
         for pw in self._pair_widgets:
             pw.deleteLater()
         self._pair_widgets.clear()
+
+
+class _ConcentrationPairWidget(QFrame):
+    """Simple checkbox for a concentration S-D pair."""
+
+    toggled = pyqtSignal()
+
+    def __init__(self, label: str, pair_idx: int, checked: bool = True, parent=None):
+        super().__init__(parent)
+        self.pair_idx = pair_idx
+        self.pair_key = label
+
+        layout = QHBoxLayout(self)
+        layout.setContentsMargins(4, 2, 4, 2)
+        layout.setSpacing(4)
+
+        self._cb = QCheckBox(label)
+        self._cb.setChecked(checked)
+        self._cb.stateChanged.connect(lambda _: self.toggled.emit())
+        layout.addWidget(self._cb)
+
+        # Color indicators
+        hbo_dot = QLabel("●")
+        hbo_dot.setStyleSheet("color: #e06c75; font-size: 12px;")
+        hbo_dot.setToolTip("HbO")
+        layout.addWidget(hbo_dot)
+
+        hbr_dot = QLabel("●")
+        hbr_dot.setStyleSheet("color: #61afef; font-size: 12px;")
+        hbr_dot.setToolTip("HbR")
+        layout.addWidget(hbr_dot)
+
+        layout.addStretch()
+
+    def is_checked(self) -> bool:
+        return self._cb.isChecked()
+
+    def set_checked(self, val: bool):
+        self._cb.setChecked(val)
+
+    def get_visible_channels(self) -> list[int]:
+        """Not used for concentration view."""
+        return []
