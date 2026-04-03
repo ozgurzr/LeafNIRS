@@ -1,12 +1,4 @@
-"""
-Tests for Phase 2 — Signal Processing.
-
-Covers:
-- OD conversion correctness (known values)
-- Bandpass filter frequency response
-- Pipeline state management
-- Edge cases
-"""
+"""Tests for OD conversion, bandpass filter, and pipeline state management."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
@@ -17,9 +9,7 @@ from processing.bandpass_filter import bandpass_filter
 from processing.pipeline import ProcessingPipeline, PipelineState
 
 
-# ══════════════════════════════════════════
-#  OD Conversion Tests
-# ══════════════════════════════════════════
+
 
 def test_od_known_values():
     """OD of constant signal should be zero."""
@@ -71,9 +61,7 @@ def test_od_multichannel():
     print("[PASS] Multi-channel OD works independently")
 
 
-# ══════════════════════════════════════════
-#  Bandpass Filter Tests
-# ══════════════════════════════════════════
+
 
 def test_filter_removes_dc():
     """DC component (0 Hz) should be removed by the highpass."""
@@ -148,9 +136,7 @@ def test_filter_short_signal():
     print("[PASS] Short signal raises ValueError")
 
 
-# ══════════════════════════════════════════
-#  Pipeline Tests
-# ══════════════════════════════════════════
+
 
 def test_pipeline_initial_state():
     """Pipeline starts in RAW state."""
@@ -221,9 +207,7 @@ def test_pipeline_reset():
     print("[PASS] Pipeline reset works")
 
 
-# ══════════════════════════════════════════
-#  Run all tests
-# ══════════════════════════════════════════
+
 
 if __name__ == '__main__':
     tests = [

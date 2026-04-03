@@ -1,9 +1,4 @@
-"""
-MainWindow — Primary application window for LeafNIRS.
-
-Assembles the file-info panel, processing panel, graph widget,
-status bar, and menus into a dark-themed professional layout.
-"""
+"""MainWindow — Primary application window for LeafNIRS."""
 from __future__ import annotations
 
 import os
@@ -20,22 +15,18 @@ from core.data_manager import DataManager
 from gui.file_info_panel import FileInfoPanel
 from gui.graph_widget import GraphWidget
 from gui.processing_panel import ProcessingPanel
+from gui.epoch_viewer import EpochViewer
 from processing.pipeline import ProcessingPipeline, PipelineState
+from processing.epoch_extraction import compute_condition_average
 
 
-# ═══════════════════════════════════════════════
-#  Dark Theme Stylesheet
-# ═══════════════════════════════════════════════
 _DARK_STYLE = """
-/* ── Global ────────────────────────────── */
 QMainWindow, QWidget {
     background-color: #1e1e1e;
     color: #dcdcdc;
     font-family: "Segoe UI", "Roboto", sans-serif;
     font-size: 13px;
 }
-
-/* ── Menu bar ──────────────────────────── */
 QMenuBar {
     background-color: #2d2d30;
     color: #dcdcdc;
@@ -54,8 +45,6 @@ QMenu {
 QMenu::item:selected {
     background-color: #094771;
 }
-
-/* ── Status bar ────────────────────────── */
 QStatusBar {
     background-color: #007acc;
     color: #ffffff;
@@ -66,8 +55,6 @@ QStatusBar QLabel {
     color: #ffffff;
     padding: 0 8px;
 }
-
-/* ── Scroll bars ───────────────────────── */
 QScrollBar:vertical {
     background: #1e1e1e;
     width: 10px;
@@ -94,22 +81,16 @@ QScrollBar::handle:horizontal {
     min-width: 30px;
     border-radius: 5px;
 }
-
-/* ── Splitter ──────────────────────────── */
 QSplitter::handle {
     background-color: #3e3e42;
 }
 QSplitter::handle:horizontal { width: 2px; }
-
-/* ── Tooltips ──────────────────────────── */
 QToolTip {
     background-color: #2d2d30;
     color: #dcdcdc;
     border: 1px solid #3e3e42;
     padding: 4px;
 }
-
-/* ── Checkboxes ────────────────────────── */
 QCheckBox { spacing: 6px; }
 QCheckBox::indicator {
     width: 14px; height: 14px;
@@ -121,8 +102,6 @@ QCheckBox::indicator:checked {
     background: #007acc;
     border-color: #007acc;
 }
-
-/* ── Group boxes ───────────────────────── */
 QGroupBox {
     font-weight: bold;
     color: #61afef;
@@ -144,36 +123,27 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self._data_manager = DataManager(self)
-        self._pipeline = None       # ProcessingPipeline, set on data load
-        self._current_data = None   # SNIRFData from loader
+        self._pipeline = None
+        self._current_data = None
         self._build_ui()
         self._connect_signals()
         self._update_status("Ready — open a .snirf file to begin")
-
-    # ══════════════════════════════════════════
-    #  UI Construction
-    # ══════════════════════════════════════════
 
     def _build_ui(self):
         self.setWindowTitle("LeafNIRS — fNIRS Brain Mapping Tool")
         self.setMinimumSize(QSize(1100, 700))
         self.resize(1400, 850)
         self.setStyleSheet(_DARK_STYLE)
-
-        # ── Menu bar ──
         self._create_menus()
 
-        # ── Central widget ──
         central = QWidget()
         self.setCentralWidget(central)
         layout = QHBoxLayout(central)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
 
-        # Splitter: left panel | graph
         splitter = QSplitter(Qt.Horizontal)
 
-        # Left sidebar: file info + processing controls
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
         left_layout.setContentsMargins(0, 0, 0, 0)
@@ -190,16 +160,24 @@ class MainWindow(QMainWindow):
         left_layout.addWidget(scroll)
 
         self._graph = GraphWidget()
+        self._epoch_viewer = EpochViewer()
+        self._epoch_viewer.setMaximumHeight(280)
+
+        v_splitter = QSplitter(Qt.Vertical)
+        v_splitter.addWidget(self._graph)
+        v_splitter.addWidget(self._epoch_viewer)
+        v_splitter.setStretchFactor(0, 3)
+        v_splitter.setStretchFactor(1, 1)
+        v_splitter.setSizes([600, 250])
 
         splitter.addWidget(left_panel)
-        splitter.addWidget(self._graph)
-        splitter.setStretchFactor(0, 0)   # left panel fixed
-        splitter.setStretchFactor(1, 1)   # graph stretches
+        splitter.addWidget(v_splitter)
+        splitter.setStretchFactor(0, 0)
+        splitter.setStretchFactor(1, 1)
         splitter.setSizes([280, 1120])
 
         layout.addWidget(splitter)
 
-        # ── Status bar ──
         self._status_bar = QStatusBar()
         self.setStatusBar(self._status_bar)
         self._status_label = QLabel("Ready")
@@ -212,7 +190,6 @@ class MainWindow(QMainWindow):
     def _create_menus(self):
         menu_bar = self.menuBar()
 
-        # ── File menu ──
         file_menu = menu_bar.addMenu("&File")
 
         open_action = QAction("&Open SNIRF…", self)
@@ -235,10 +212,8 @@ class MainWindow(QMainWindow):
         exit_action.triggered.connect(self.close)
         file_menu.addAction(exit_action)
 
-        # ── View menu ──
         view_menu = menu_bar.addMenu("&View")
 
-        # Loader submenu
         loader_menu = view_menu.addMenu("SNIRF &Loader")
         self._loader_lib_action = QAction("snirf library (Method A)", self, checkable=True)
         self._loader_h5py_action = QAction("h5py raw (Method B)", self, checkable=True)
@@ -248,44 +223,38 @@ class MainWindow(QMainWindow):
         loader_menu.addAction(self._loader_lib_action)
         loader_menu.addAction(self._loader_h5py_action)
 
-        # ── Help menu ──
         help_menu = menu_bar.addMenu("&Help")
         about_action = QAction("&About LeafNIRS", self)
         about_action.triggered.connect(self._on_about)
         help_menu.addAction(about_action)
-
-    # ══════════════════════════════════════════
-    #  Signal Connections
-    # ══════════════════════════════════════════
 
     def _connect_signals(self):
         self._data_manager.data_loaded.connect(self._on_data_loaded)
         self._data_manager.data_cleared.connect(self._on_data_cleared)
         self._data_manager.error_occurred.connect(self._on_error)
 
-        # Processing panel signals
         self._processing_panel.convert_od_clicked.connect(self._on_convert_od)
+        self._processing_panel.apply_correction_clicked.connect(self._on_apply_correction)
         self._processing_panel.apply_filter_clicked.connect(self._on_apply_filter)
         self._processing_panel.convert_conc_clicked.connect(self._on_convert_concentration)
+        self._processing_panel.apply_all_clicked.connect(self._on_apply_all)
         self._processing_panel.reset_clicked.connect(self._on_reset_processing)
         self._processing_panel.view_raw_clicked.connect(
             lambda: self._on_switch_view(PipelineState.RAW))
         self._processing_panel.view_od_clicked.connect(
             lambda: self._on_switch_view(PipelineState.OD))
+        self._processing_panel.view_corrected_clicked.connect(
+            lambda: self._on_switch_view(PipelineState.CORRECTED))
         self._processing_panel.view_filtered_clicked.connect(
             lambda: self._on_switch_view(PipelineState.FILTERED))
         self._processing_panel.view_conc_clicked.connect(
             lambda: self._on_switch_view(PipelineState.CONCENTRATION))
 
-    # ══════════════════════════════════════════
-    #  Slots / Handlers
-    # ══════════════════════════════════════════
+        self._epoch_viewer.compute_requested.connect(self._on_compute_epochs)
 
     def _on_open_file(self):
         filepath, _ = QFileDialog.getOpenFileName(
-            self,
-            "Open SNIRF File",
-            "",
+            self, "Open SNIRF File", "",
             "SNIRF Files (*.snirf);;All Files (*)",
         )
         if filepath:
@@ -306,24 +275,23 @@ class MainWindow(QMainWindow):
         self._processing_panel.set_enabled(True)
         fname = os.path.basename(data.filepath)
 
-        # Auto-apply processing if in Auto mode
         if self._processing_panel.is_auto:
             try:
                 low = self._processing_panel.filter_low
                 high = self._processing_panel.filter_high
                 order = self._processing_panel.filter_order
+                self._pipeline.apply_motion_correction(method='tddr')
                 self._pipeline.apply_bandpass(low=low, high=high, order=order)
-                # Auto-apply MBLL for HbO/HbR
                 self._pipeline.convert_to_concentration()
                 r = self._pipeline.result
                 self._graph.plot_concentration(
                     r.hbo, r.hbr, self._current_data, r.pair_labels,
                 )
                 self._update_status(
-                    f"Loaded: {fname} — auto-processed (OD + filter + HbO/HbR)"
+                    f"Loaded: {fname} — auto-processed (OD + TDDR + filter + HbO/HbR)"
                 )
             except Exception as e:
-                # Fall back to raw if auto-processing fails
+                import traceback; traceback.print_exc()
                 self._update_status(f"Loaded: {fname} — auto-processing failed: {e}")
         else:
             self._update_status(f"Loaded: {fname}")
@@ -336,11 +304,17 @@ class MainWindow(QMainWindow):
             f"\U0001f4c8 {data.sampling_rate:.1f} Hz"
         )
 
+        if data.stimuli:
+            self._epoch_viewer.set_conditions([s.name for s in data.stimuli])
+        else:
+            self._epoch_viewer.set_conditions([])
+
     def _on_data_cleared(self):
         self._current_data = None
         self._pipeline = None
         self._file_info.clear_info()
         self._graph.clear_plot()
+        self._epoch_viewer.clear()
         self._processing_panel.set_enabled(False)
         self._update_status("Ready — open a .snirf file to begin")
         self._file_label.setText("")
@@ -349,8 +323,7 @@ class MainWindow(QMainWindow):
     def _on_error(self, message: str):
         self._update_status("Error loading file")
         QMessageBox.critical(
-            self,
-            "Load Error",
+            self, "Load Error",
             f"Failed to load SNIRF file:\n\n{message}",
         )
 
@@ -363,8 +336,7 @@ class MainWindow(QMainWindow):
 
     def _on_about(self):
         QMessageBox.about(
-            self,
-            "About LeafNIRS",
+            self, "About LeafNIRS",
             "<h2>LeafNIRS v0.1.0</h2>"
             "<p>A Python-based fNIRS Brain Mapping Tool for<br>"
             "Signal Processing and Visualization.</p>"
@@ -378,9 +350,29 @@ class MainWindow(QMainWindow):
             "<p>Open source · MIT License · Python 3.12</p>"
         )
 
-    # ══════════════════════════════════════════
-    #  Processing Handlers
-    # ══════════════════════════════════════════
+    def _on_apply_all(self):
+        """Run full pipeline: OD → TDDR → bandpass → MBLL."""
+        if not self._pipeline:
+            return
+        self._update_status("Applying full pipeline...")
+        try:
+            low = self._processing_panel.filter_low
+            high = self._processing_panel.filter_high
+            order = self._processing_panel.filter_order
+            self._pipeline.apply_motion_correction(method='tddr')
+            self._pipeline.apply_bandpass(low=low, high=high, order=order)
+            self._pipeline.convert_to_concentration()
+            r = self._pipeline.result
+            self._graph.plot_concentration(
+                r.hbo, r.hbr, self._current_data, r.pair_labels,
+            )
+            self._sync_processing_state()
+            self._update_status(
+                f"Full pipeline applied: {len(r.pair_labels)} pairs → HbO/HbR"
+            )
+        except Exception as e:
+            import traceback; traceback.print_exc()
+            self._on_error(f"Pipeline failed: {e}")
 
     def _on_convert_od(self):
         if not self._pipeline:
@@ -398,6 +390,22 @@ class MainWindow(QMainWindow):
         except Exception as e:
             self._on_error(f"OD conversion failed: {e}")
 
+    def _on_apply_correction(self, method: str):
+        if not self._pipeline:
+            return
+        self._update_status(f"Applying motion correction ({method.upper()})...")
+        try:
+            self._pipeline.apply_motion_correction(method=method)
+            r = self._pipeline.result
+            n_artifacts = r.artifact_mask.sum() if r.artifact_mask is not None else 0
+            self._graph.update_data(r.active_data, self._current_data, r.state_label)
+            self._sync_processing_state()
+            self._update_status(
+                f"Motion corrected ({method.upper()}): {n_artifacts} artifact samples"
+            )
+        except Exception as e:
+            self._on_error(f"Motion correction failed: {e}")
+
     def _on_apply_filter(self, low: float, high: float, order: int):
         if not self._pipeline:
             return
@@ -410,9 +418,7 @@ class MainWindow(QMainWindow):
                 self._pipeline.result.state_label,
             )
             self._sync_processing_state()
-            self._update_status(
-                f"Bandpass filtered: {low}–{high} Hz, order {order}"
-            )
+            self._update_status(f"Bandpass filtered: {low}–{high} Hz, order {order}")
         except Exception as e:
             self._on_error(f"Filter failed: {e}")
 
@@ -427,9 +433,7 @@ class MainWindow(QMainWindow):
                 r.hbo, r.hbr, self._current_data, r.pair_labels,
             )
             self._sync_processing_state()
-            self._update_status(
-                f"MBLL: {len(r.pair_labels)} S-D pairs → HbO/HbR"
-            )
+            self._update_status(f"MBLL: {len(r.pair_labels)} S-D pairs → HbO/HbR")
         except Exception as e:
             self._on_error(f"MBLL conversion failed: {e}")
 
@@ -452,14 +456,10 @@ class MainWindow(QMainWindow):
                     r.hbo, r.hbr, self._current_data, r.pair_labels,
                 )
             else:
-                self._graph.update_data(
-                    r.active_data,
-                    self._current_data,
-                    r.state_label,
-                )
+                self._graph.update_data(r.active_data, self._current_data, r.state_label)
             self._sync_processing_state()
         except ValueError:
-            pass  # Data not available for this view
+            pass
 
     def _sync_processing_state(self):
         if self._pipeline:
@@ -468,10 +468,50 @@ class MainWindow(QMainWindow):
                 r.state_label,
                 has_od=r.od is not None,
                 has_filtered=r.filtered is not None,
+                has_corrected=r.corrected is not None,
                 has_concentration=r.hbo is not None,
             )
 
-    # ── Helpers ───────────────────────────────
-
     def _update_status(self, text: str):
         self._status_label.setText(f"  {text}")
+
+    def _on_compute_epochs(self, condition: str, pre_sec: float, post_sec: float):
+        """Compute block average for the requested condition."""
+        if not self._pipeline or not self._current_data:
+            return
+
+        r = self._pipeline.result
+        if r.hbo is None or r.hbr is None:
+            self._on_error(
+                "HbO/HbR data required for block averaging.\n"
+                "Run the full pipeline first (Apply All)."
+            )
+            return
+
+        stim = None
+        for s in self._current_data.stimuli:
+            if s.name == condition:
+                stim = s
+                break
+
+        if stim is None:
+            self._on_error(f"Stimulus condition '{condition}' not found.")
+            return
+
+        self._update_status(f"Computing block average for '{condition}'...")
+        try:
+            result = compute_condition_average(
+                hbo=r.hbo, hbr=r.hbr,
+                time=self._current_data.time,
+                onsets=stim.onset,
+                condition_name=condition,
+                pair_labels=r.pair_labels,
+                pre_sec=pre_sec, post_sec=post_sec,
+            )
+            self._epoch_viewer.set_results([result])
+            self._update_status(
+                f"Block average: '{condition}' — {result.n_trials} trials averaged"
+            )
+        except Exception as e:
+            import traceback; traceback.print_exc()
+            self._on_error(f"Block averaging failed: {e}")

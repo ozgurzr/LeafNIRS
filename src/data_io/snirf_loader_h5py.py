@@ -1,8 +1,4 @@
-"""
-SNIRF Loader — Method B: raw h5py HDF5 access.
-
-Directly traverses the HDF5 structure for full control over parsing.
-"""
+"""SNIRF loader using raw h5py for direct HDF5 traversal."""
 from __future__ import annotations
 
 import h5py
@@ -18,11 +14,11 @@ def _unwrap_scalar(val):
     """Unwrap numpy (1,)-shaped arrays and bytes to plain Python types."""
     if isinstance(val, np.ndarray):
         if val.dtype.kind == 'S':
-            # Fixed-length byte-string array → list of str
+
             decoded = [v.decode('utf-8') for v in val.ravel()]
             return decoded[0] if val.size == 1 else decoded
         if val.dtype == object:
-            # Variable-length string array (dtype=object) → list of str
+
             decoded = []
             for v in val.ravel():
                 if isinstance(v, bytes):
@@ -49,16 +45,15 @@ def _read_dataset(group, name, default=None):
 def _normalize_labels(raw, prefix, count):
     """Convert raw label data into a clean list of strings.
 
-    Handles: None, single str, list of str, bytes, list of bytes.
-    Falls back to auto-generated labels like S1, S2, ... or D1, D2, ...
+    Handles None, str, bytes, list, ndarray. Falls back to auto-generated labels.
     """
     if raw is None:
         return [f"{prefix}{i+1}" for i in range(count)]
-    # Single string → wrap in list
+
     if isinstance(raw, (str, bytes)):
         decoded = raw.decode('utf-8') if isinstance(raw, bytes) else raw
         return [decoded]
-    # List or array
+
     if isinstance(raw, (list, np.ndarray)):
         result = []
         for v in raw:
@@ -81,21 +76,19 @@ class SNIRFLoaderH5py(SNIRFLoaderBase):
 
     def _load_impl(self, filepath: str) -> SNIRFData:
         with h5py.File(filepath, 'r') as f:
-            # Locate the first nirs group (nirs or nirs1)
+
             nirs_key = 'nirs' if 'nirs' in f else 'nirs1'
             if nirs_key not in f:
                 raise ValueError("No nirs group found in SNIRF file")
             nirs = f[nirs_key]
 
-            # ── intensity & time ──────────────────
+
             data_key = 'data' if 'data' in nirs else 'data1'
             data_grp = nirs[data_key]
             intensity = np.array(data_grp['dataTimeSeries'], dtype=np.float64)
             time = np.array(data_grp['time'], dtype=np.float64).ravel()
 
-            # ── probe geometry ────────────────────
             probe_grp = nirs['probe']
-            # Try 3D first, fall back to 2D
             if 'sourcePos3D' in probe_grp:
                 src_pos = np.array(probe_grp['sourcePos3D'], dtype=np.float64)
             else:
@@ -122,7 +115,7 @@ class SNIRFLoaderH5py(SNIRFLoaderBase):
                 detector_labels=det_labels,
             )
 
-            # ── channels (measurementList) ────────
+
             channels: list[ChannelInfo] = []
             ml_idx = 1
             while True:
@@ -139,7 +132,7 @@ class SNIRFLoaderH5py(SNIRFLoaderBase):
                 ))
                 ml_idx += 1
 
-            # ── stimuli ───────────────────────────
+
             stimuli: list[StimulusInfo] = []
             stim_idx = 1
             while True:
@@ -160,7 +153,7 @@ class SNIRFLoaderH5py(SNIRFLoaderBase):
                         ))
                 stim_idx += 1
 
-            # ── metadata ──────────────────────────
+
             metadata: dict = {}
             if 'metaDataTags' in nirs:
                 mdt = nirs['metaDataTags']

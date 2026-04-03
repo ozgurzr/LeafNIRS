@@ -1,13 +1,4 @@
-"""
-GraphWidget — High-performance multi-channel fNIRS time-series viewer.
-
-Features:
-- Channels grouped by source-detector pair (each pair shows both wavelengths)
-- Wavelength filter toggle (WL1 / WL2 / Both)
-- Channel quality flags (CV-based, highlights noisy or flat channels)
-- Stacked (offset) view vs overlaid view
-- Downsampling + clip-to-view for smooth zoom/pan
-"""
+"""GraphWidget — Multi-channel fNIRS time-series viewer with pair grouping and quality flags."""
 from __future__ import annotations
 
 from collections import OrderedDict
@@ -25,7 +16,7 @@ from PyQt5.QtGui import QFont, QColor
 from data_io.snirf_loader_base import SNIRFData
 
 
-# ── Performance config ───────────────────────
+
 pg.setConfigOptions(
     antialias=False,
     background='#1e1e1e',
@@ -33,7 +24,7 @@ pg.setConfigOptions(
     useOpenGL=False,
 )
 
-# Wavelength colours (convention: red-ish for HbO wavelength, blue-ish for HbR)
+
 _WL_COLORS = {
     1: "#e06c75",   # wavelength 1 (typically 760nm → deoxy)
     2: "#61afef",   # wavelength 2 (typically 850nm → oxy)
@@ -43,7 +34,7 @@ _WL_COLORS_DIM = {
     2: "#2e5a7a",
 }
 
-# Quality thresholds
+
 _CV_BAD_THRESHOLD = 0.50    # coefficient of variation > 50% → bad
 _CV_FLAT_THRESHOLD = 0.001  # CV < 0.1% → flat / no contact
 
@@ -73,7 +64,6 @@ class _PairWidget(QFrame):
         layout.setContentsMargins(4, 3, 4, 3)
         layout.setSpacing(2)
 
-        # ── Header row: pair checkbox + quality badge ──
         header = QHBoxLayout()
         self.pair_cb = QCheckBox(pair_key)
         self.pair_cb.setFont(QFont("Segoe UI", 10, QFont.Bold))
@@ -81,7 +71,6 @@ class _PairWidget(QFrame):
         self.pair_cb.toggled.connect(self._on_pair_toggled)
         header.addWidget(self.pair_cb)
 
-        # Quality badge
         worst_q = max(item["quality"] for item in wl_items)
         if worst_q == 2:
             badge = QLabel("⚠ BAD")
@@ -96,7 +85,6 @@ class _PairWidget(QFrame):
         header.addWidget(badge)
         layout.addLayout(header)
 
-        # ── Wavelength sub-checkboxes ──
         self.wl_cbs: dict[int, QCheckBox] = {}
         for item in wl_items:
             wl_idx = item["wl_idx"]
@@ -166,25 +154,18 @@ class GraphWidget(QWidget):
         self._quality: dict[int, int] = {}    # ch_idx → 0=ok, 1=flat, 2=bad
         self._build_ui()
 
-    # ══════════════════════════════════════════
-    #  UI Construction
-    # ══════════════════════════════════════════
-
     def _build_ui(self):
         main_layout = QHBoxLayout(self)
         main_layout.setContentsMargins(0, 0, 0, 0)
 
-        # ── Plot area ──
         plot_container = QVBoxLayout()
 
-        # Title bar
         title_bar = QHBoxLayout()
         self._title = QLabel("  Raw Optical Intensity")
         self._title.setFont(QFont("Segoe UI", 11, QFont.Bold))
         self._title.setStyleSheet("color: #dcdcdc;")
         title_bar.addWidget(self._title)
 
-        # Stacked/Overlaid toggle
         self._btn_stacked = QPushButton("📊 Stacked")
         self._btn_overlaid = QPushButton("📈 Overlaid")
         for btn in (self._btn_stacked, self._btn_overlaid):
@@ -211,7 +192,6 @@ class GraphWidget(QWidget):
         title_frame.setStyleSheet("background-color: #2d2d30; border-bottom: 1px solid #3e3e42;")
         plot_container.addWidget(title_frame)
 
-        # PyQtGraph PlotWidget
         self._plot = pg.PlotWidget()
         self._plot.setLabel('bottom', 'Time', units='s')
         self._plot.setLabel('left', 'Intensity', units='a.u.')
@@ -221,11 +201,9 @@ class GraphWidget(QWidget):
 
         main_layout.addLayout(plot_container, stretch=5)
 
-        # ── Sidebar ──
         sidebar = QVBoxLayout()
         sidebar.setSpacing(4)
 
-        # Header
         sidebar_header = QLabel("  Channels")
         sidebar_header.setFont(QFont("Segoe UI", 10, QFont.Bold))
         sidebar_header.setFixedHeight(36)
@@ -234,7 +212,6 @@ class GraphWidget(QWidget):
         )
         sidebar.addWidget(sidebar_header)
 
-        # ── Wavelength filter ──
         wl_frame = QFrame()
         wl_frame.setStyleSheet("background: #252526; border-radius: 4px; padding: 2px;")
         wl_layout = QHBoxLayout(wl_frame)
@@ -266,13 +243,11 @@ class GraphWidget(QWidget):
         wl_layout.addWidget(self._btn_wl2)
         sidebar.addWidget(wl_frame)
 
-        # ── Quality summary label ──
         self._quality_label = QLabel("")
         self._quality_label.setStyleSheet("color: #888; font-size: 10px; padding: 0 6px;")
         self._quality_label.setWordWrap(True)
         sidebar.addWidget(self._quality_label)
 
-        # ── Pair selection buttons ──
         btn_row = QHBoxLayout()
         self._btn_all = QPushButton("All")
         self._btn_none = QPushButton("None")
@@ -308,7 +283,6 @@ class GraphWidget(QWidget):
         btn_row.addWidget(self._spin_first)
         sidebar.addLayout(btn_row)
 
-        # ── Scrollable pair list ──
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
         scroll.setFixedWidth(210)
@@ -325,10 +299,6 @@ class GraphWidget(QWidget):
 
         main_layout.addLayout(sidebar, stretch=1)
 
-    # ══════════════════════════════════════════
-    #  Public API
-    # ══════════════════════════════════════════
-
     def plot_data(self, data: SNIRFData):
         """Load channel data, compute quality, build pair list, and plot."""
         self._data = data
@@ -343,17 +313,14 @@ class GraphWidget(QWidget):
         self._btn_wl1.setChecked(False)
         self._btn_wl2.setChecked(False)
 
-        # Update wavelength button labels with actual values
         wls = data.probe.wavelengths
         if len(wls) >= 1:
             self._btn_wl1.setText(f"{wls[0]:.0f}")
         if len(wls) >= 2:
             self._btn_wl2.setText(f"{wls[1]:.0f}")
 
-        # ── Compute channel quality ──
         self._compute_quality(data)
 
-        # ── Group channels by S-D pair ──
         pair_map: OrderedDict[str, list[dict]] = OrderedDict()
         for ch_idx, ch in enumerate(data.channels):
             pair_key = f"S{ch.source_index}–D{ch.detector_index}"
@@ -366,7 +333,6 @@ class GraphWidget(QWidget):
             }
             pair_map.setdefault(pair_key, []).append(item)
 
-        # ── Create curves for all channels ──
         downsample = max(1, len(data.time) // 2000)
         for ch_idx in range(data.n_channels):
             ch = data.channels[ch_idx]
@@ -384,7 +350,6 @@ class GraphWidget(QWidget):
             self._plot.addItem(curve)
             self._curves[ch_idx] = curve
 
-        # ── Build pair widgets ──
         n_good = 0
         n_flat = 0
         n_bad = 0
@@ -398,7 +363,6 @@ class GraphWidget(QWidget):
             if pair_idx < _DEFAULT_PAIRS_SHOWN:
                 pw.set_checked(True)
 
-            # Count quality
             worst = max(item["quality"] for item in wl_items)
             if worst == 2:
                 n_bad += 1
@@ -407,7 +371,6 @@ class GraphWidget(QWidget):
             else:
                 n_good += 1
 
-        # Quality summary
         total = len(pair_map)
         self._quality_label.setText(
             f"Quality: {n_good}/{total} OK  ·  {n_flat} flat  ·  {n_bad} noisy"
@@ -419,20 +382,35 @@ class GraphWidget(QWidget):
 
         self._plot_array = data.intensity  # active data for plotting
         self._conc_mode = False  # not in concentration mode
+
+        # ── Draw stimulus onset markers ──
+        self._stim_lines = []
+        if hasattr(data, 'stimuli') and data.stimuli:
+            stim_colors = ['#ffcc00', '#ff6699', '#66ff99', '#66ccff', '#ff9933', '#cc99ff']
+            for si, stim in enumerate(data.stimuli):
+                color = stim_colors[si % len(stim_colors)]
+                for onset in stim.onset:
+                    line = pg.InfiniteLine(
+                        pos=onset, angle=90,
+                        pen=pg.mkPen(color, width=1, style=pg.QtCore.Qt.DashLine),
+                    )
+                    line.setZValue(-10)  # behind curves
+                    self._plot.addItem(line)
+                    self._stim_lines.append(line)
+
         self._refresh_curves()
 
     def update_data(self, new_array, snirf_data, title_prefix: str):
-        """Re-plot using processed data (OD / filtered) without rebuilding pair list.
+        """Re-plot using processed data (OD / filtered / corrected).
 
-        Parameters
-        ----------
-        new_array : ndarray, shape (n_time, n_ch)
-            Processed data to display.
-        snirf_data : SNIRFData
-            Original data (for time axis and channel info).
-        title_prefix : str
-            Label like 'Optical Density' or 'Filtered OD'.
+        If the graph was previously showing concentration curves,
+        rebuild the full channel view first.
         """
+        if getattr(self, '_conc_mode', False):
+            # Rebuild channel view (was replaced by concentration curves)
+            self._conc_mode = False
+            self.plot_data(snirf_data)
+
         self._data = snirf_data
         self._plot_array = new_array
         total = len(self._pair_widgets)
@@ -470,19 +448,16 @@ class GraphWidget(QWidget):
         n_pairs = hbo.shape[1]
         time = snirf_data.time
 
-        # Store HbR for access during refresh
         self._hbr_array = hbr
         self._conc_mode = True
 
-        # Create curves — two per pair (HbO + HbR)
-        _HBO_COLOR = "#e06c75"  # red
-        _HBR_COLOR = "#61afef"  # blue
+        _HBO_COLOR = "#e06c75"
+        _HBR_COLOR = "#61afef"
 
         shown = min(n_pairs, _DEFAULT_PAIRS_SHOWN)
         for i in range(n_pairs):
             visible = i < shown
 
-            # HbO curve
             pen_hbo = pg.mkPen(color=_HBO_COLOR, width=1.5 if visible else 1)
             curve_hbo = self._plot.plot(
                 time, hbo[:, i], pen=pen_hbo, name=f"{pair_labels[i]} HbO",
@@ -491,7 +466,6 @@ class GraphWidget(QWidget):
             if not visible:
                 curve_hbo.setData([], [])
 
-            # HbR curve
             pen_hbr = pg.mkPen(color=_HBR_COLOR, width=1.5 if visible else 1)
             curve_hbr = self._plot.plot(
                 time, hbr[:, i], pen=pen_hbr, name=f"{pair_labels[i]} HbR",
@@ -500,17 +474,15 @@ class GraphWidget(QWidget):
             if not visible:
                 curve_hbr.setData([], [])
 
-            # Store curves with special keying
             self._curves[i * 2] = curve_hbo
             self._curves[i * 2 + 1] = curve_hbr
 
-            # Create a simple pair checkbox
             pw = _ConcentrationPairWidget(
-                pair_labels[i], i, checked=visible, parent=self._pair_list,
+                pair_labels[i], i, checked=visible, parent=self._pair_container,
             )
             pw.toggled.connect(lambda idx=i: self._refresh_conc_curves())
             self._pair_widgets.append(pw)
-            self._pair_list_layout.addWidget(pw)
+            self._pair_layout.addWidget(pw)
 
         self._title.setText(
             f"  HbO / HbR — {n_pairs} S-D pairs (μmol/L)"
@@ -564,10 +536,6 @@ class GraphWidget(QWidget):
         self._data = None
         self._conc_mode = False
 
-    # ══════════════════════════════════════════
-    #  Quality Computation
-    # ══════════════════════════════════════════
-
     def _compute_quality(self, data: SNIRFData):
         """Compute per-channel quality using coefficient of variation."""
         self._quality.clear()
@@ -585,10 +553,6 @@ class GraphWidget(QWidget):
             else:
                 self._quality[ch_idx] = 0  # ok
 
-    # ══════════════════════════════════════════
-    #  Curve Refresh (called on any toggle)
-    # ══════════════════════════════════════════
-
     def _refresh_curves(self):
         """Update which curves have data based on pair checkboxes."""
         if self._data is None:
@@ -596,12 +560,10 @@ class GraphWidget(QWidget):
 
         plot_arr = getattr(self, '_plot_array', self._data.intensity)
 
-        # Collect all visible channel indices
         visible_set: set[int] = set()
         for pw in self._pair_widgets:
             visible_set.update(pw.get_visible_channels())
 
-        # Calculate offset for stacked view
         visible_list = sorted(visible_set)
         offsets: dict[int, float] = {}
         if self._stacked and visible_list:
@@ -612,7 +574,6 @@ class GraphWidget(QWidget):
             for rank, ch_idx in enumerate(visible_list):
                 offsets[ch_idx] = rank * offset_step
 
-        # Apply data to curves
         time = self._data.time
         for ch_idx, curve in self._curves.items():
             if ch_idx in visible_set:
@@ -636,10 +597,6 @@ class GraphWidget(QWidget):
             self._plot.getPlotItem().getViewBox().autoRange()
         except Exception:
             pass
-
-    # ══════════════════════════════════════════
-    #  Controls
-    # ══════════════════════════════════════════
 
     def _set_view_mode(self, stacked: bool):
         self._stacked = stacked
@@ -700,7 +657,6 @@ class _ConcentrationPairWidget(QFrame):
         self._cb.stateChanged.connect(lambda _: self.toggled.emit())
         layout.addWidget(self._cb)
 
-        # Color indicators
         hbo_dot = QLabel("●")
         hbo_dot.setStyleSheet("color: #e06c75; font-size: 12px;")
         hbo_dot.setToolTip("HbO")

@@ -1,13 +1,6 @@
-"""
-Modified Beer-Lambert Law (MBLL) Converter.
+"""Modified Beer-Lambert Law (MBLL) converter: OD → ΔHbO / ΔHbR.
 
-Converts optical density (OD) changes into hemoglobin concentration
-changes (ΔHbO, ΔHbR) using the two-wavelength MBLL approach:
-
-    ΔOD(λ) = ε_HbO(λ) · ΔC_HbO · DPF(λ) · d  +  ε_HbR(λ) · ΔC_HbR · DPF(λ) · d
-
-For two wavelengths this becomes a 2×2 linear system solved per
-source-detector pair at each timepoint.
+Two-wavelength system solved per S-D pair at each timepoint.
 """
 from __future__ import annotations
 
@@ -16,21 +9,9 @@ import numpy as np
 from data_io.snirf_loader_base import ChannelInfo, ProbeGeometry
 
 
-# ══════════════════════════════════════════
-#  Extinction Coefficients Table
-# ══════════════════════════════════════════
-#
-# Molar extinction coefficients (cm⁻¹ / (mol/L)) for HbO₂ and HHb.
+# Molar extinction coefficients (mm⁻¹/(mM)) for HbO₂ and HHb.
 # Source: Scott Prahl (https://omlc.org/spectra/hemoglobin/)
-# Values at common fNIRS wavelengths, converted to mm⁻¹/(mmol/L).
-# Units: mm⁻¹ · L · mmol⁻¹  (i.e. per mmol/L per mm path)
-#
-# The table stores (ε_HbO, ε_HbR) for each wavelength in nm.
-# These are the "specific extinction coefficients" commonly used
-# in fNIRS literature (Cope, 1991; Strangman et al., 2003).
-
 _EXTINCTION_TABLE: dict[int, tuple[float, float]] = {
-    # nm:   (ε_HbO,     ε_HbR)     units: mm⁻¹/(mM)
     690:  (0.000956,  0.005186),
     700:  (0.001058,  0.004636),
     720:  (0.001260,  0.003600),
@@ -65,22 +46,13 @@ _EXTINCTION_TABLE: dict[int, tuple[float, float]] = {
 def get_extinction_coefficients(
     wavelengths: np.ndarray | list[float],
 ) -> np.ndarray:
-    """Look up extinction coefficients for given wavelengths.
+    """Look up extinction coefficients [ε_HbO, ε_HbR] per wavelength.
 
-    Parameters
-    ----------
-    wavelengths : array-like, shape (n_wl,)
-        Wavelengths in nm.
+    Uses nearest-neighbour lookup if exact wavelength is not tabled.
 
     Returns
     -------
     E : ndarray, shape (n_wl, 2)
-        Columns are [ε_HbO, ε_HbR] for each wavelength.
-
-    Notes
-    -----
-    If exact wavelength is not in the table, nearest-neighbour
-    interpolation is used from the available table entries.
     """
     wls = np.asarray(wavelengths, dtype=np.float64)
     table_wls = np.array(sorted(_EXTINCTION_TABLE.keys()), dtype=np.float64)
@@ -91,27 +63,15 @@ def get_extinction_coefficients(
         if rounded in _EXTINCTION_TABLE:
             E[i] = _EXTINCTION_TABLE[rounded]
         else:
-            # Nearest-neighbour from table
             idx = np.argmin(np.abs(table_wls - wl))
-            nearest = int(table_wls[idx])
-            E[i] = _EXTINCTION_TABLE[nearest]
+            E[i] = _EXTINCTION_TABLE[int(table_wls[idx])]
 
     return E
 
 
-# ══════════════════════════════════════════
-#  Differential Pathlength Factor (DPF)
-# ══════════════════════════════════════════
-#
-# DPF accounts for the increased optical path due to scattering.
-# Formula from Scholkmann & Wolf (2013), General equation for DPF:
-#   DPF(λ, age) = 223.3 + 0.05624 · age^0.8493
-#                 - 5.723e-7 · λ^3 + 0.001245 · λ^2
-#                 - 0.9025 · λ - 23.27 · exp(-0.0002051 · λ^2)
-# (Simplified; common practice: use fixed DPF per wavelength.)
-
+# DPF values for adult head (~age 25).
+# Scholkmann & Wolf (2013).
 _DPF_TABLE: dict[int, float] = {
-    # Common fNIRS wavelengths, adult head (age ~25)
     690: 6.51, 700: 6.40, 720: 6.20, 730: 6.10,
     740: 5.99, 750: 5.89, 760: 5.79, 770: 5.68,
     780: 5.57, 790: 5.46, 800: 5.36, 810: 5.26,
@@ -123,17 +83,11 @@ _DPF_TABLE: dict[int, float] = {
 
 
 def get_dpf(wavelengths: np.ndarray | list[float]) -> np.ndarray:
-    """Look up differential pathlength factors for given wavelengths.
-
-    Parameters
-    ----------
-    wavelengths : array-like, shape (n_wl,)
-        Wavelengths in nm.
+    """Look up differential pathlength factors per wavelength.
 
     Returns
     -------
     dpf : ndarray, shape (n_wl,)
-        DPF value per wavelength (adult head, age ~25).
     """
     wls = np.asarray(wavelengths, dtype=np.float64)
     table_wls = np.array(sorted(_DPF_TABLE.keys()), dtype=np.float64)
@@ -145,68 +99,37 @@ def get_dpf(wavelengths: np.ndarray | list[float]) -> np.ndarray:
             dpf[i] = _DPF_TABLE[rounded]
         else:
             idx = np.argmin(np.abs(table_wls - wl))
-            nearest = int(table_wls[idx])
-            dpf[i] = _DPF_TABLE[nearest]
+            dpf[i] = _DPF_TABLE[int(table_wls[idx])]
 
     return dpf
 
-
-# ══════════════════════════════════════════
-#  OD → Concentration Conversion
-# ══════════════════════════════════════════
 
 def od_to_concentration(
     od: np.ndarray,
     channels: list[ChannelInfo],
     probe: ProbeGeometry,
 ) -> tuple[np.ndarray, np.ndarray, list[str]]:
-    """Convert OD to hemoglobin concentration changes via MBLL.
+    """Convert OD to ΔHbO/ΔHbR (μmol/L) via 2×2 MBLL solve per S-D pair.
 
-    Groups channels by source-detector pair, then for each pair
-    solves the 2×2 MBLL system using both wavelengths.
-
-    Parameters
-    ----------
-    od : ndarray, shape (n_time, n_ch)
-        Optical density (or filtered OD).
-    channels : list of ChannelInfo
-        Channel metadata (source/detector/wavelength indices).
-    probe : ProbeGeometry
-        Probe geometry (wavelengths, source/detector positions).
+    Requires exactly 2 wavelengths per pair. S-D distance computed from probe.
 
     Returns
     -------
-    hbo : ndarray, shape (n_time, n_pairs)
-        ΔHbO concentration changes (μmol/L).
-    hbr : ndarray, shape (n_time, n_pairs)
-        ΔHbR concentration changes (μmol/L).
+    hbo, hbr : ndarray, shape (n_time, n_pairs)
     pair_labels : list of str
-        Labels like 'S1-D1', 'S1-D2', etc.
-
-    Notes
-    -----
-    - Requires exactly 2 wavelengths per S-D pair.
-    - Source-detector distance is computed from probe positions.
-    - Units: μmol/L (micromolar).
     """
     wavelengths = probe.wavelengths
     n_time = od.shape[0]
 
-    # Get extinction coefficients and DPF
-    E_raw = get_extinction_coefficients(wavelengths)  # (n_wl, 2)
-    dpf = get_dpf(wavelengths)                        # (n_wl,)
+    E_raw = get_extinction_coefficients(wavelengths)
+    dpf = get_dpf(wavelengths)
 
-    # Group channels by (source_index, detector_index) → {wl_idx: ch_idx}
     pair_map: dict[tuple[int, int], dict[int, int]] = {}
     for ch_idx, ch in enumerate(channels):
         key = (ch.source_index, ch.detector_index)
         pair_map.setdefault(key, {})[ch.wavelength_index] = ch_idx
 
-    # Filter to pairs that have exactly 2 wavelengths
-    valid_pairs = {
-        k: v for k, v in pair_map.items()
-        if len(v) == 2
-    }
+    valid_pairs = {k: v for k, v in pair_map.items() if len(v) == 2}
 
     n_pairs = len(valid_pairs)
     hbo = np.zeros((n_time, n_pairs), dtype=np.float64)
@@ -216,21 +139,17 @@ def od_to_concentration(
     for pair_idx, ((src, det), wl_map) in enumerate(sorted(valid_pairs.items())):
         pair_labels.append(f"S{src}-D{det}")
 
-        # Get the two channel indices and their wavelength indices
-        wl_indices = sorted(wl_map.keys())  # e.g. [1, 2]
+        wl_indices = sorted(wl_map.keys())
         ch1 = wl_map[wl_indices[0]]
         ch2 = wl_map[wl_indices[1]]
 
-        # Compute source-detector distance (mm)
-        src_pos = probe.source_pos[src - 1]  # 1-indexed → 0-indexed
+        src_pos = probe.source_pos[src - 1]
         det_pos = probe.detector_pos[det - 1]
-        sd_dist = np.linalg.norm(src_pos[:2] - det_pos[:2])  # 2D distance
+        sd_dist = np.linalg.norm(src_pos[:2] - det_pos[:2])
         if sd_dist < 1.0:
-            sd_dist = 30.0  # fallback: 30mm typical if geometry is missing
+            sd_dist = 30.0  # fallback for missing geometry
 
-        # Build extinction matrix: E_matrix[i,j] = ε_j(λi) * DPF(λi) * d
-        # i = wavelength index (0,1), j = chromophore (0=HbO, 1=HbR)
-        wl_0 = wl_indices[0] - 1  # convert 1-indexed to 0-indexed
+        wl_0 = wl_indices[0] - 1
         wl_1 = wl_indices[1] - 1
 
         E_matrix = np.array([
@@ -238,21 +157,15 @@ def od_to_concentration(
              E_raw[wl_0, 1] * dpf[wl_0] * sd_dist],
             [E_raw[wl_1, 0] * dpf[wl_1] * sd_dist,
              E_raw[wl_1, 1] * dpf[wl_1] * sd_dist],
-        ])  # (2, 2)
+        ])
 
-        # Invert the extinction matrix
         try:
             E_inv = np.linalg.inv(E_matrix)
         except np.linalg.LinAlgError:
-            # Singular matrix — skip this pair
             continue
 
-        # OD for these two channels: (n_time, 2)
         od_pair = np.column_stack([od[:, ch1], od[:, ch2]])
-
-        # Solve: [ΔC_HbO, ΔC_HbR] = E⁻¹ · [ΔOD(λ1), ΔOD(λ2)]ᵀ
-        # → conc = od_pair @ E_inv.T  (each row is one timepoint)
-        conc = od_pair @ E_inv.T  # (n_time, 2)
+        conc = od_pair @ E_inv.T
 
         hbo[:, pair_idx] = conc[:, 0]
         hbr[:, pair_idx] = conc[:, 1]

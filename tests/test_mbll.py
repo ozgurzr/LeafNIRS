@@ -1,12 +1,4 @@
-"""
-Tests for Phase 3 — Modified Beer-Lambert Law (MBLL).
-
-Covers:
-- Extinction coefficient lookup
-- DPF lookup
-- Known-value 2×2 concentration solver
-- Full pipeline integration
-"""
+"""Tests for MBLL extinction coefficients, DPF, concentration solver, and pipeline."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
@@ -21,9 +13,6 @@ from processing.pipeline import ProcessingPipeline, PipelineState
 from data_io.snirf_loader_base import ChannelInfo, ProbeGeometry
 
 
-# ══════════════════════════════════════════
-#  Extinction Coefficient Tests
-# ══════════════════════════════════════════
 
 def test_extinction_known_wavelengths():
     """Exact wavelengths in the table should return correct values."""
@@ -53,9 +42,7 @@ def test_extinction_all_positive():
     print("[PASS] All extinction coefficients positive")
 
 
-# ══════════════════════════════════════════
-#  DPF Tests
-# ══════════════════════════════════════════
+
 
 def test_dpf_known_wavelengths():
     """DPF at known wavelengths should return table values."""
@@ -76,9 +63,7 @@ def test_dpf_decreases_with_wavelength():
     print("[PASS] DPF decreases with wavelength")
 
 
-# ══════════════════════════════════════════
-#  Concentration Solver Tests
-# ══════════════════════════════════════════
+
 
 def _make_test_data(n_time=200, n_pairs=2, wavelengths=None):
     """Create synthetic test data with known S-D pairs."""
@@ -172,9 +157,7 @@ def test_concentration_known_solve():
     print(f"[PASS] Known-value solve: HbO={hbo[0,0]:.4f}, HbR={hbr[0,0]:.4f} μmol/L")
 
 
-# ══════════════════════════════════════════
-#  Pipeline Integration Tests
-# ══════════════════════════════════════════
+
 
 def test_pipeline_concentration():
     """Full pipeline: intensity → OD → filter → concentration."""
@@ -225,9 +208,7 @@ def test_pipeline_view_switching_with_concentration():
     print("[PASS] View switching with concentration works")
 
 
-# ══════════════════════════════════════════
-#  Run all tests
-# ══════════════════════════════════════════
+
 
 if __name__ == '__main__':
     tests = [
