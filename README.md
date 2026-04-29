@@ -6,7 +6,7 @@
 [![PyQt5](https://img.shields.io/badge/GUI-PyQt5-41CD52?logo=qt&logoColor=white)](https://pypi.org/project/PyQt5/)
 [![SNIRF](https://img.shields.io/badge/Format-SNIRF%20%2F%20HDF5-orange)](https://fnirs.org/resources/software/snirf/)
 
-A Python-based **fNIRS Brain Mapping Tool** for signal processing, GLM statistical analysis, and 3D cortical visualization — supporting the [SNIRF](https://fnirs.org/resources/software/snirf/) standard.
+A Python-based **fNIRS Brain Mapping Tool** for signal processing, GLM statistical analysis, and 3D cortical visualization - supporting the [SNIRF](https://fnirs.org/resources/software/snirf/) standard.
 
 > [!NOTE]
 > This project is under active development as a senior design project at Acibadem Mehmet Ali Aydinlar University, Department of Biomedical Engineering.
@@ -28,7 +28,7 @@ A Python-based **fNIRS Brain Mapping Tool** for signal processing, GLM statistic
 - Intensity → optical density conversion (Beer-Lambert law)
 - Butterworth bandpass filter (zero-phase via `scipy.filtfilt`)
 - Motion correction: TDDR (Fishburn et al., 2019) and cubic spline interpolation
-- Auto/Manual processing mode — auto-applies OD → TDDR → bandpass on file load
+- Auto/Manual processing mode - auto-applies OD → TDDR → bandpass on file load
 
 ### Concentration Analysis
 - Modified Beer-Lambert Law (MBLL): OD → ΔHbO / ΔHbR (μmol/L)
@@ -153,6 +153,6 @@ nibabel >= 4.0
 
 ## License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing to this project.
