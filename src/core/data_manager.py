@@ -18,7 +18,7 @@ class DataManager(QObject):
     def __init__(self, parent=None):
         super().__init__(parent)
         self._data: SNIRFData | None = None
-        self._loader = SNIRFLoaderH5py()
+        self._loader = SNIRFLoaderLib()
 
     @property
     def data(self) -> SNIRFData | None:

@@ -50,29 +50,40 @@
 22. **Apply All Button** — one-click full pipeline (OD → TDDR → Filter → MBLL)
 23. **Motion Tests** — 11 unit tests (detection, TDDR, spline, pipeline)
 
-#### Block Averaging ← *Next*
+#### Block Averaging ✅
 
-- Parse stimulus/event markers from SNIRF `stim` groups
-- Epoch extraction around stimulus onsets
-- Block averaging with confidence intervals
-- GUI: stimulus markers on time-series, epoch viewer, averaged HRF plot
+24. **Stimulus Parsing** — parse onset/duration/amplitude from SNIRF `stim` groups
+25. **Epoch Extraction** — configurable pre/post windows, baseline correction
+26. **Block Averaging** — trial-averaged HRF with SEM confidence bands
+27. **Epoch Viewer GUI** — condition/pair selectors, HbO (red) / HbR (blue) HRF plot
+28. **Stimulus Markers** — color-coded vertical onset lines on main time-series (toggleable)
+29. **Epoch Tests** — 10 unit tests (extraction, baseline, averaging, pipeline)
 
-#### Statistical Analysis — GLM
+#### Statistical Analysis — GLM ✅
 
-- General Linear Model (GLM) for task-related activation
-- t-maps / activation maps overlaid on probe geometry
+30. **Canonical HRF** — double-gamma SPM model (scipy gamma PDF)
+31. **Design Matrix** — stimulus convolution + polynomial drift regressors
+32. **GLM Solver** — OLS fit, β weights, t-statistics, p-values per pair per condition
+33. **Pipeline Integration** — `run_glm()` in ProcessingPipeline
+34. **Probe Activation Map** — 2D scatter of t-stats on probe geometry (pyqtgraph)
+35. **Run GLM Button** — GUI button with condition/chromophore/p-threshold controls
+36. **GLM Tests** — 17 unit tests (HRF, design matrix, solver, integration)
 
-#### HOMER3 Validation
+#### HOMER3 Validation ✅
 
-- Cross-validate processing pipeline against HOMER3 outputs
-- Benchmark OD, bandpass, MBLL, and block averaging results
+37. **Reference Pipeline** — MATLAB script generating 5 .mat reference outputs
+38. **Cross-Validation** — Python comparison script: r² and RMSE at each stage
+39. **Results** — 4/4 stages PASS (OD r²=1.00, filter r²=0.96, MBLL r²=0.96, blockavg r²=0.99)
 
-### 5. Phase 4: 3D Brain Map Visualization (May – Jun)
+### 5. Phase 4: 3D Brain Map Visualization ✅
 
-- **Brain Atlas Integration** — MNI coordinate mapping
-- **3D Rendering Engine** — cortical surface visualization
-- **Interactive Overlay of HbO-HbR** — activation maps on 3D brain
-- **GUI Integration** — 3D viewer panel with rotation/zoom
+40. **Brain Mesh Generator** — parametric ellipsoid with cortical folding + longitudinal fissure
+41. **2D→3D Projection** — map probe 2D positions onto brain surface (nearest-surface lookup)
+42. **3D Viewer Widget** — pyqtgraph GLViewWidget with translucent cortical mesh
+43. **Activation Overlay** — GLM t-statistics as color-coded spheres at S-D midpoints
+44. **Interactive Controls** — rotate/zoom, condition/chromophore/p-threshold selectors
+45. **Tab UI** — tabbed panel: 📍 2D Probe Map | 🧠 3D Brain
+46. **Dependency** — PyOpenGL added to requirements.txt
 
 ---
 
@@ -92,15 +103,24 @@ src/
 │   ├── bandpass_filter.py       # Butterworth bandpass
 │   ├── motion_correction.py     # Artifact detection + TDDR/spline
 │   ├── mbll_converter.py        # OD → HbO/HbR concentrations
+│   ├── epoch_extraction.py      # Block averaging + epoch extraction
+│   ├── glm_analysis.py          # GLM: HRF, design matrix, OLS solver
+│   ├── brain_mesh.py            # 3D brain mesh + 2D→3D projection
 │   └── pipeline.py              # Processing state manager
 ├── gui/
 │   ├── main_window.py           # Main app window
 │   ├── file_info_panel.py       # Metadata display
 │   ├── graph_widget.py          # PyQtGraph time-series
-│   └── processing_panel.py      # Auto/Manual controls
+│   ├── processing_panel.py      # Auto/Manual controls
+│   ├── epoch_viewer.py          # Block-averaged HRF viewer
+│   ├── probe_map_widget.py      # 2D probe activation map
+│   └── brain_viewer_widget.py   # 3D brain viewer with activation overlay
 tests/
 ├── test_snirf_loaders.py        # 30 loader tests
 ├── test_processing.py           # 15 processing tests
 ├── test_mbll.py                 # 12 MBLL tests
-└── test_motion_correction.py    # 11 motion correction tests
+├── test_motion_correction.py    # 11 motion correction tests
+├── test_epoch_extraction.py     # 10 epoch tests
+├── test_glm.py                  # 17 GLM tests
+└── test_homer3_validation.py    # HOMER3 cross-validation
 ```

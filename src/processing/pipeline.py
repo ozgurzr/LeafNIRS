@@ -1,6 +1,6 @@
 """Processing pipeline: tracks state and stores intermediate results.
 
-Pipeline: Raw → OD → Corrected → Filtered → HbO/HbR
+Pipeline: Raw → OD → Corrected → Filtered → HbO/HbR [→ GLM]
 """
 from __future__ import annotations
 
@@ -40,6 +40,8 @@ class PipelineResult:
     filter_high: float = 0.0
     filter_order: int = 0
     correction_method: str = ""
+    glm_hbo: object | None = None
+    glm_hbr: object | None = None
 
     @property
     def active_data(self) -> np.ndarray:
@@ -172,6 +174,22 @@ class ProcessingPipeline:
         self._result.state = PipelineState.CONCENTRATION
         return hbo, hbr
 
+    def run_glm(self, stimuli: list) -> tuple:
+        """Run GLM analysis on HbO/HbR concentration data."""
+        if self._result.hbo is None or self._result.hbr is None:
+            raise ValueError("Concentration data required. Run convert_to_concentration() first.")
+
+        from processing.glm_analysis import compute_glm
+
+        time = np.arange(self._result.hbo.shape[0]) / self._fs
+        glm_hbo, glm_hbr = compute_glm(
+            self._result.hbo, self._result.hbr,
+            time, stimuli, self._result.pair_labels, self._fs,
+        )
+        self._result.glm_hbo = glm_hbo
+        self._result.glm_hbr = glm_hbr
+        return glm_hbo, glm_hbr
+
     def set_view(self, state: PipelineState) -> np.ndarray:
         """Switch the active view without recomputing."""
         if state == PipelineState.CONCENTRATION and self._result.hbo is None:
@@ -198,6 +216,8 @@ class ProcessingPipeline:
         self._result.filter_high = 0.0
         self._result.filter_order = 0
         self._result.correction_method = ""
+        self._result.glm_hbo = None
+        self._result.glm_hbr = None
         self._result.state = PipelineState.RAW
 
     def _clear_downstream(self, from_stage: str):

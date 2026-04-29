@@ -55,7 +55,7 @@ def detect_artifacts(
                 continue
             channel_mask = abs_deriv > threshold * std_d
         else:
-            # 1.4826 makes MAD consistent with std for normal distributions
+            # 1.4826 makes MAD consistent with std for Gaussian distributions.
             channel_mask = abs_deriv > median_d + threshold * 1.4826 * mad
 
         if np.any(channel_mask):

@@ -26,8 +26,8 @@ pg.setConfigOptions(
 
 
 _WL_COLORS = {
-    1: "#e06c75",   # wavelength 1 (typically 760nm → deoxy)
-    2: "#61afef",   # wavelength 2 (typically 850nm → oxy)
+    1: "#e06c75",   # ~760nm (deoxy)
+    2: "#61afef",   # ~850nm (oxy)
 }
 _WL_COLORS_DIM = {
     1: "#7a3a3f",
@@ -152,6 +152,7 @@ class GraphWidget(QWidget):
         self._stacked = False
         self._wl_filter: int | None = None    # None = both
         self._quality: dict[int, int] = {}    # ch_idx → 0=ok, 1=flat, 2=bad
+        self._stim_visible = True
         self._build_ui()
 
     def _build_ui(self):
@@ -182,7 +183,23 @@ class GraphWidget(QWidget):
         self._btn_overlaid.setChecked(True)
         self._btn_stacked.clicked.connect(lambda: self._set_view_mode(True))
         self._btn_overlaid.clicked.connect(lambda: self._set_view_mode(False))
+        self._btn_stim = QPushButton("📍 Stim")
+        self._btn_stim.setFixedHeight(26)
+        self._btn_stim.setCheckable(True)
+        self._btn_stim.setChecked(True)
+        self._btn_stim.setStyleSheet("""
+            QPushButton {
+                background-color: #3e3e42; color: #dcdcdc; border: none;
+                border-radius: 3px; padding: 2px 10px; font-size: 11px;
+            }
+            QPushButton:checked { background-color: #5a4a1a; color: #ffcc00; }
+            QPushButton:hover { background-color: #505054; }
+        """)
+        self._btn_stim.setToolTip("Show/hide stimulus onset markers")
+        self._btn_stim.clicked.connect(self._toggle_stim_lines)
+
         title_bar.addStretch()
+        title_bar.addWidget(self._btn_stim)
         title_bar.addWidget(self._btn_overlaid)
         title_bar.addWidget(self._btn_stacked)
 
@@ -359,7 +376,7 @@ class GraphWidget(QWidget):
             self._pair_layout.addWidget(pw)
             self._pair_widgets.append(pw)
 
-            # Auto-enable first N pairs
+            # Enable first N pairs.
             if pair_idx < _DEFAULT_PAIRS_SHOWN:
                 pw.set_checked(True)
 
@@ -380,10 +397,9 @@ class GraphWidget(QWidget):
             f"  Raw Intensity — {data.n_channels} ch, {total} pairs"
         )
 
-        self._plot_array = data.intensity  # active data for plotting
-        self._conc_mode = False  # not in concentration mode
+        self._plot_array = data.intensity
+        self._conc_mode = False
 
-        # ── Draw stimulus onset markers ──
         self._stim_lines = []
         if hasattr(data, 'stimuli') and data.stimuli:
             stim_colors = ['#ffcc00', '#ff6699', '#66ff99', '#66ccff', '#ff9933', '#cc99ff']
@@ -394,7 +410,8 @@ class GraphWidget(QWidget):
                         pos=onset, angle=90,
                         pen=pg.mkPen(color, width=1, style=pg.QtCore.Qt.DashLine),
                     )
-                    line.setZValue(-10)  # behind curves
+                    line.setZValue(-10)
+                    line.setVisible(self._stim_visible)
                     self._plot.addItem(line)
                     self._stim_lines.append(line)
 
@@ -407,7 +424,7 @@ class GraphWidget(QWidget):
         rebuild the full channel view first.
         """
         if getattr(self, '_conc_mode', False):
-            # Rebuild channel view (was replaced by concentration curves)
+            # Was showing concentration curves; rebuild channel view.
             self._conc_mode = False
             self.plot_data(snirf_data)
 
@@ -509,6 +526,21 @@ class GraphWidget(QWidget):
         hbr = self._hbr_array
         time = self._data.time
 
+        visible_indices = []
+        for pw in self._pair_widgets:
+            if isinstance(pw, _ConcentrationPairWidget) and pw.is_checked():
+                visible_indices.append(pw.pair_idx)
+
+        offsets = {}
+        if self._stacked and visible_indices:
+            sample = hbo[:, visible_indices[0]]
+            spread = sample.max() - sample.min()
+            if spread == 0:
+                spread = 1.0
+            offset_step = spread * 2.5
+            for rank, idx in enumerate(visible_indices):
+                offsets[idx] = rank * offset_step
+
         for pw in self._pair_widgets:
             if not isinstance(pw, _ConcentrationPairWidget):
                 continue
@@ -516,16 +548,31 @@ class GraphWidget(QWidget):
             visible = pw.is_checked()
             curve_hbo = self._curves.get(i * 2)
             curve_hbr = self._curves.get(i * 2 + 1)
-            if curve_hbo:
-                if visible:
-                    curve_hbo.setData(time, hbo[:, i])
-                else:
+            if visible:
+                y_hbo = hbo[:, i].copy()
+                y_hbr = hbr[:, i].copy()
+                if i in offsets:
+                    y_hbo = y_hbo - np.mean(y_hbo) + offsets[i]
+                    y_hbr = y_hbr - np.mean(y_hbr) + offsets[i]
+                if curve_hbo:
+                    curve_hbo.setData(time, y_hbo)
+                if curve_hbr:
+                    curve_hbr.setData(time, y_hbr)
+            else:
+                if curve_hbo:
                     curve_hbo.setData([], [])
-            if curve_hbr:
-                if visible:
-                    curve_hbr.setData(time, hbr[:, i])
-                else:
+                if curve_hbr:
                     curve_hbr.setData([], [])
+
+        if self._stacked:
+            self._plot.setLabel('left', 'Pair (stacked)', units='')
+        else:
+            self._plot.setLabel('left', 'Concentration', units='µmol/L')
+
+        try:
+            self._plot.getPlotItem().getViewBox().autoRange()
+        except Exception:
+            pass
 
     def clear_plot(self):
         self._plot.clear()
@@ -587,7 +634,6 @@ class GraphWidget(QWidget):
         if self._stacked and visible_list:
             self._plot.setLabel('left', 'Channel (stacked)', units='')
         else:
-            # Adjust label based on data type
             if hasattr(self, '_plot_array') and self._plot_array is not self._data.intensity:
                 self._plot.setLabel('left', 'OD / Filtered', units='')
             else:
@@ -602,7 +648,10 @@ class GraphWidget(QWidget):
         self._stacked = stacked
         self._btn_stacked.setChecked(stacked)
         self._btn_overlaid.setChecked(not stacked)
-        self._refresh_curves()
+        if getattr(self, '_conc_mode', False):
+            self._refresh_conc_curves()
+        else:
+            self._refresh_curves()
 
     def _set_wl_filter(self, wl_idx: int | None):
         self._wl_filter = wl_idx
@@ -617,12 +666,18 @@ class GraphWidget(QWidget):
             pw.set_checked(True)
         if self._wl_filter is not None:
             self._set_wl_filter(self._wl_filter)
-        self._refresh_curves()
+        if getattr(self, '_conc_mode', False):
+            self._refresh_conc_curves()
+        else:
+            self._refresh_curves()
 
     def _select_none(self):
         for pw in self._pair_widgets:
             pw.set_checked(False)
-        self._refresh_curves()
+        if getattr(self, '_conc_mode', False):
+            self._refresh_conc_curves()
+        else:
+            self._refresh_curves()
 
     def _select_first_n(self):
         n = self._spin_first.value()
@@ -630,7 +685,15 @@ class GraphWidget(QWidget):
             pw.set_checked(i < n)
         if self._wl_filter is not None:
             self._set_wl_filter(self._wl_filter)
-        self._refresh_curves()
+        if getattr(self, '_conc_mode', False):
+            self._refresh_conc_curves()
+        else:
+            self._refresh_curves()
+
+    def _toggle_stim_lines(self):
+        self._stim_visible = self._btn_stim.isChecked()
+        for line in getattr(self, '_stim_lines', []):
+            line.setVisible(self._stim_visible)
 
     def _clear_pair_list(self):
         for pw in self._pair_widgets:
@@ -678,3 +741,7 @@ class _ConcentrationPairWidget(QFrame):
     def get_visible_channels(self) -> list[int]:
         """Not used for concentration view."""
         return []
+
+    def set_wavelength_filter(self, wl_idx):
+        """No-op for concentration view."""
+        pass

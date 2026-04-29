@@ -54,8 +54,10 @@ class FileInfoPanel(QWidget):
     def _clear_content(self):
         while self._content_layout.count():
             child = self._content_layout.takeAt(0)
-            if child.widget():
-                child.widget().deleteLater()
+            w = child.widget()
+            if w:
+                w.setParent(None)
+                w.deleteLater()
 
     def update_info(self, data: SNIRFData):
         """Populate the panel with data from a loaded SNIRF file."""

@@ -1,0 +1,294 @@
+﻿============================================================
+LeafNIRS Block-Average Batch Processing
+============================================================
+Pipeline: OD -> TDDR -> Bandpass (0.01-0.1 Hz) -> MBLL
+Epoch window: -2.0s to +20.0s
+Output: C:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\block_average_results
+
+
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Subject: SUBJID_6082
+
+  Run: run1
+  Loaded: 120 ch, 8675 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8675, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6082_run1_cond1_blockavg.csv
+    Saved: SUBJID_6082_run1_cond1_hrf.png
+    Saved: SUBJID_6082_run1_cond2_blockavg.csv
+    Saved: SUBJID_6082_run1_cond2_hrf.png
+    Saved: SUBJID_6082_run1_cond3_blockavg.csv
+    Saved: SUBJID_6082_run1_cond3_hrf.png
+    Saved: SUBJID_6082_run1_cond4_blockavg.csv
+    Saved: SUBJID_6082_run1_cond4_hrf.png
+    Saved: SUBJID_6082_run1_cond5_blockavg.csv
+    Saved: SUBJID_6082_run1_cond5_hrf.png
+
+  Run: run2
+  Loaded: 120 ch, 8500 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8500, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6082_run2_cond1_blockavg.csv
+    Saved: SUBJID_6082_run2_cond1_hrf.png
+    Saved: SUBJID_6082_run2_cond2_blockavg.csv
+    Saved: SUBJID_6082_run2_cond2_hrf.png
+    Saved: SUBJID_6082_run2_cond3_blockavg.csv
+    Saved: SUBJID_6082_run2_cond3_hrf.png
+    Saved: SUBJID_6082_run2_cond4_blockavg.csv
+    Saved: SUBJID_6082_run2_cond4_hrf.png
+    Saved: SUBJID_6082_run2_cond5_blockavg.csv
+    Saved: SUBJID_6082_run2_cond5_hrf.png
+
+  Run: run3
+  Loaded: 120 ch, 8650 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8650, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 6 trials, epoch_time=-2.0..20.0s
+    Cond '3': 7 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6082_run3_cond1_blockavg.csv
+    Saved: SUBJID_6082_run3_cond1_hrf.png
+    Saved: SUBJID_6082_run3_cond2_blockavg.csv
+    Saved: SUBJID_6082_run3_cond2_hrf.png
+    Saved: SUBJID_6082_run3_cond3_blockavg.csv
+    Saved: SUBJID_6082_run3_cond3_hrf.png
+    Saved: SUBJID_6082_run3_cond4_blockavg.csv
+    Saved: SUBJID_6082_run3_cond4_hrf.png
+    Saved: SUBJID_6082_run3_cond5_blockavg.csv
+    Saved: SUBJID_6082_run3_cond5_hrf.png
+
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Subject: SUBJID_6083
+
+  Run: run1
+  Loaded: 120 ch, 8675 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8675, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6083_run1_cond1_blockavg.csv
+    Saved: SUBJID_6083_run1_cond1_hrf.png
+    Saved: SUBJID_6083_run1_cond2_blockavg.csv
+    Saved: SUBJID_6083_run1_cond2_hrf.png
+    Saved: SUBJID_6083_run1_cond3_blockavg.csv
+    Saved: SUBJID_6083_run1_cond3_hrf.png
+    Saved: SUBJID_6083_run1_cond4_blockavg.csv
+    Saved: SUBJID_6083_run1_cond4_hrf.png
+    Saved: SUBJID_6083_run1_cond5_blockavg.csv
+    Saved: SUBJID_6083_run1_cond5_hrf.png
+
+  Run: run2
+  Loaded: 120 ch, 8525 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8525, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6083_run2_cond1_blockavg.csv
+    Saved: SUBJID_6083_run2_cond1_hrf.png
+    Saved: SUBJID_6083_run2_cond2_blockavg.csv
+    Saved: SUBJID_6083_run2_cond2_hrf.png
+    Saved: SUBJID_6083_run2_cond3_blockavg.csv
+    Saved: SUBJID_6083_run2_cond3_hrf.png
+    Saved: SUBJID_6083_run2_cond4_blockavg.csv
+    Saved: SUBJID_6083_run2_cond4_hrf.png
+    Saved: SUBJID_6083_run2_cond5_blockavg.csv
+    Saved: SUBJID_6083_run2_cond5_hrf.png
+
+  Run: run3
+  Loaded: 120 ch, 8675 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8675, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 6 trials, epoch_time=-2.0..20.0s
+    Cond '3': 7 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6083_run3_cond1_blockavg.csv
+    Saved: SUBJID_6083_run3_cond1_hrf.png
+    Saved: SUBJID_6083_run3_cond2_blockavg.csv
+    Saved: SUBJID_6083_run3_cond2_hrf.png
+    Saved: SUBJID_6083_run3_cond3_blockavg.csv
+    Saved: SUBJID_6083_run3_cond3_hrf.png
+    Saved: SUBJID_6083_run3_cond4_blockavg.csv
+    Saved: SUBJID_6083_run3_cond4_hrf.png
+    Saved: SUBJID_6083_run3_cond5_blockavg.csv
+    Saved: SUBJID_6083_run3_cond5_hrf.png
+
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Subject: SUBJID_6084
+
+  Run: run1
+  Loaded: 120 ch, 8725 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8725, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6084_run1_cond1_blockavg.csv
+    Saved: SUBJID_6084_run1_cond1_hrf.png
+    Saved: SUBJID_6084_run1_cond2_blockavg.csv
+    Saved: SUBJID_6084_run1_cond2_hrf.png
+    Saved: SUBJID_6084_run1_cond3_blockavg.csv
+    Saved: SUBJID_6084_run1_cond3_hrf.png
+    Saved: SUBJID_6084_run1_cond4_blockavg.csv
+    Saved: SUBJID_6084_run1_cond4_hrf.png
+    Saved: SUBJID_6084_run1_cond5_blockavg.csv
+    Saved: SUBJID_6084_run1_cond5_hrf.png
+
+  Run: run2
+  Loaded: 120 ch, 8525 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8525, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 7 trials, epoch_time=-2.0..20.0s
+    Cond '3': 6 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6084_run2_cond1_blockavg.csv
+    Saved: SUBJID_6084_run2_cond1_hrf.png
+    Saved: SUBJID_6084_run2_cond2_blockavg.csv
+    Saved: SUBJID_6084_run2_cond2_hrf.png
+    Saved: SUBJID_6084_run2_cond3_blockavg.csv
+    Saved: SUBJID_6084_run2_cond3_hrf.png
+    Saved: SUBJID_6084_run2_cond4_blockavg.csv
+    Saved: SUBJID_6084_run2_cond4_hrf.png
+    Saved: SUBJID_6084_run2_cond5_blockavg.csv
+    Saved: SUBJID_6084_run2_cond5_hrf.png
+
+  Run: run3
+  Loaded: 120 ch, 8650 tp, 25.0 Hz, 5 conditions
+  Pipeline: 60 pairs, HbO shape=(8650, 60)
+    Cond '1': 6 trials, epoch_time=-2.0..20.0s
+    Cond '2': 6 trials, epoch_time=-2.0..20.0s
+    Cond '3': 7 trials, epoch_time=-2.0..20.0s
+    Cond '4': 7 trials, epoch_time=-2.0..20.0s
+    Cond '5': 7 trials, epoch_time=-2.0..20.0s
+    Saved: SUBJID_6084_run3_cond1_blockavg.csv
+    Saved: SUBJID_6084_run3_cond1_hrf.png
+    Saved: SUBJID_6084_run3_cond2_blockavg.csv
+    Saved: SUBJID_6084_run3_cond2_hrf.png
+    Saved: SUBJID_6084_run3_cond3_blockavg.csv
+    Saved: SUBJID_6084_run3_cond3_hrf.png
+    Saved: SUBJID_6084_run3_cond4_blockavg.csv
+    Saved: SUBJID_6084_run3_cond4_hrf.png
+    Saved: SUBJID_6084_run3_cond5_blockavg.csv
+    Saved: SUBJID_6084_run3_cond5_hrf.png
+
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Generating summary grid...
+  Saved: summary_grid_all_subjects.png
+
+============================================================
+SUMMARY
+============================================================
+Subjects: 3
+Total runs processed: 9
+Total block averages: 45
+Files generated: 91
+
+Files:
+  SUBJID_6082_run1_cond1_blockavg.csv
+  SUBJID_6082_run1_cond1_hrf.png
+  SUBJID_6082_run1_cond2_blockavg.csv
+  SUBJID_6082_run1_cond2_hrf.png
+  SUBJID_6082_run1_cond3_blockavg.csv
+  SUBJID_6082_run1_cond3_hrf.png
+  SUBJID_6082_run1_cond4_blockavg.csv
+  SUBJID_6082_run1_cond4_hrf.png
+  SUBJID_6082_run1_cond5_blockavg.csv
+  SUBJID_6082_run1_cond5_hrf.png
+  SUBJID_6082_run2_cond1_blockavg.csv
+  SUBJID_6082_run2_cond1_hrf.png
+  SUBJID_6082_run2_cond2_blockavg.csv
+  SUBJID_6082_run2_cond2_hrf.png
+  SUBJID_6082_run2_cond3_blockavg.csv
+  SUBJID_6082_run2_cond3_hrf.png
+  SUBJID_6082_run2_cond4_blockavg.csv
+  SUBJID_6082_run2_cond4_hrf.png
+  SUBJID_6082_run2_cond5_blockavg.csv
+  SUBJID_6082_run2_cond5_hrf.png
+  SUBJID_6082_run3_cond1_blockavg.csv
+  SUBJID_6082_run3_cond1_hrf.png
+  SUBJID_6082_run3_cond2_blockavg.csv
+  SUBJID_6082_run3_cond2_hrf.png
+  SUBJID_6082_run3_cond3_blockavg.csv
+  SUBJID_6082_run3_cond3_hrf.png
+  SUBJID_6082_run3_cond4_blockavg.csv
+  SUBJID_6082_run3_cond4_hrf.png
+  SUBJID_6082_run3_cond5_blockavg.csv
+  SUBJID_6082_run3_cond5_hrf.png
+  SUBJID_6083_run1_cond1_blockavg.csv
+  SUBJID_6083_run1_cond1_hrf.png
+  SUBJID_6083_run1_cond2_blockavg.csv
+  SUBJID_6083_run1_cond2_hrf.png
+  SUBJID_6083_run1_cond3_blockavg.csv
+  SUBJID_6083_run1_cond3_hrf.png
+  SUBJID_6083_run1_cond4_blockavg.csv
+  SUBJID_6083_run1_cond4_hrf.png
+  SUBJID_6083_run1_cond5_blockavg.csv
+  SUBJID_6083_run1_cond5_hrf.png
+  SUBJID_6083_run2_cond1_blockavg.csv
+  SUBJID_6083_run2_cond1_hrf.png
+  SUBJID_6083_run2_cond2_blockavg.csv
+  SUBJID_6083_run2_cond2_hrf.png
+  SUBJID_6083_run2_cond3_blockavg.csv
+  SUBJID_6083_run2_cond3_hrf.png
+  SUBJID_6083_run2_cond4_blockavg.csv
+  SUBJID_6083_run2_cond4_hrf.png
+  SUBJID_6083_run2_cond5_blockavg.csv
+  SUBJID_6083_run2_cond5_hrf.png
+  SUBJID_6083_run3_cond1_blockavg.csv
+  SUBJID_6083_run3_cond1_hrf.png
+  SUBJID_6083_run3_cond2_blockavg.csv
+  SUBJID_6083_run3_cond2_hrf.png
+  SUBJID_6083_run3_cond3_blockavg.csv
+  SUBJID_6083_run3_cond3_hrf.png
+  SUBJID_6083_run3_cond4_blockavg.csv
+  SUBJID_6083_run3_cond4_hrf.png
+  SUBJID_6083_run3_cond5_blockavg.csv
+  SUBJID_6083_run3_cond5_hrf.png
+  SUBJID_6084_run1_cond1_blockavg.csv
+  SUBJID_6084_run1_cond1_hrf.png
+  SUBJID_6084_run1_cond2_blockavg.csv
+  SUBJID_6084_run1_cond2_hrf.png
+  SUBJID_6084_run1_cond3_blockavg.csv
+  SUBJID_6084_run1_cond3_hrf.png
+  SUBJID_6084_run1_cond4_blockavg.csv
+  SUBJID_6084_run1_cond4_hrf.png
+  SUBJID_6084_run1_cond5_blockavg.csv
+  SUBJID_6084_run1_cond5_hrf.png
+  SUBJID_6084_run2_cond1_blockavg.csv
+  SUBJID_6084_run2_cond1_hrf.png
+  SUBJID_6084_run2_cond2_blockavg.csv
+  SUBJID_6084_run2_cond2_hrf.png
+  SUBJID_6084_run2_cond3_blockavg.csv
+  SUBJID_6084_run2_cond3_hrf.png
+  SUBJID_6084_run2_cond4_blockavg.csv
+  SUBJID_6084_run2_cond4_hrf.png
+  SUBJID_6084_run2_cond5_blockavg.csv
+  SUBJID_6084_run2_cond5_hrf.png
+  SUBJID_6084_run3_cond1_blockavg.csv
+  SUBJID_6084_run3_cond1_hrf.png
+  SUBJID_6084_run3_cond2_blockavg.csv
+  SUBJID_6084_run3_cond2_hrf.png
+  SUBJID_6084_run3_cond3_blockavg.csv
+  SUBJID_6084_run3_cond3_hrf.png
+  SUBJID_6084_run3_cond4_blockavg.csv
+  SUBJID_6084_run3_cond4_hrf.png
+  SUBJID_6084_run3_cond5_blockavg.csv
+  SUBJID_6084_run3_cond5_hrf.png
+  summary_grid_all_subjects.png
+
+Log saved to: C:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\block_average_results\processing_log.txt

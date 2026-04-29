@@ -27,6 +27,7 @@ class ProcessingPanel(QWidget):
     view_corrected_clicked = pyqtSignal()
     view_filtered_clicked = pyqtSignal()
     view_conc_clicked = pyqtSignal()
+    run_glm_clicked = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -92,6 +93,21 @@ class ProcessingPanel(QWidget):
         )
         self._btn_apply_all.clicked.connect(self.apply_all_clicked.emit)
         layout.addWidget(self._btn_apply_all)
+
+        self._btn_run_glm = QPushButton("📊  Run GLM Analysis")
+        self._btn_run_glm.setStyleSheet(
+            "QPushButton { background-color: #4a1a6b; color: #fff; "
+            "padding: 8px; border-radius: 5px; font-weight: bold; font-size: 12px; }"
+            "QPushButton:hover { background-color: #5e2288; }"
+            "QPushButton:disabled { background-color: #2d2d30; color: #666; }"
+        )
+        self._btn_run_glm.setToolTip(
+            "Run General Linear Model analysis\n"
+            "Requires HbO/HbR data (run Apply All first)"
+        )
+        self._btn_run_glm.setEnabled(False)
+        self._btn_run_glm.clicked.connect(self.run_glm_clicked.emit)
+        layout.addWidget(self._btn_run_glm)
 
         state_group = QGroupBox("Pipeline State")
         state_layout = QVBoxLayout(state_group)
@@ -305,6 +321,7 @@ class ProcessingPanel(QWidget):
         self._btn_apply_filter.setEnabled(enabled)
         self._btn_convert_conc.setEnabled(enabled)
         self._btn_apply_all.setEnabled(enabled)
+        self._btn_run_glm.setEnabled(False)
         self._btn_reset.setEnabled(enabled)
         self._btn_view_raw.setEnabled(enabled)
         self._btn_view_od.setEnabled(False)
@@ -329,6 +346,7 @@ class ProcessingPanel(QWidget):
         self._btn_view_corr.setEnabled(has_corrected)
         self._btn_view_filt.setEnabled(has_filtered)
         self._btn_view_conc.setEnabled(has_concentration)
+        self._btn_run_glm.setEnabled(has_concentration)
 
         self._btn_view_raw.setChecked(state_label == "Raw Intensity")
         self._btn_view_od.setChecked(state_label == "Optical Density")

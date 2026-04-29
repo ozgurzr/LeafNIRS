@@ -1,0 +1,8095 @@
+﻿[Step 000] ============================================================
+[Step 000] LeafNIRS Automated GUI Test ÔÇö 20260411_132243
+[Step 000] ============================================================
+[Step 001] INITIAL STATE ÔÇö no file loaded
+[Step 001]   SAVED: 001_initial_window.png  (1400x850)
+[Step 001]   OK: No data loaded
+[Step 001]   OK: Apply All disabled
+[Step 002] LOAD FILE ÔÇö open SNIRF via DataManager
+python.exe : Traceback 
+(most recent call last):
+At line:1 char:1
++ & "c:\Users\90546\Desk
+top\LeafNIRS Plan\LeafNI
+RS\venv\Scripts\python. 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo      
+        : NotSpecified: 
+(T    raceback (most 
+recent     call 
+last)::String)     [], 
+RemoteException
+    + 
+FullyQualifiedError    
+Id : NativeCommandErr   
+ or
+ 
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+Traceback (most recent 
+call last):
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsObject.py",
+ line 20, in itemChange
+    self.changeParent()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 394, in 
+changeParent
+    self._updateView()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\GraphicsItem.py", 
+line 448, in _updateView
+    
+self.viewRangeChanged()
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1827, in 
+viewRangeChanged
+    self.updateItems(sty
+leUpdate=False)
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1378, in 
+updateItems
+    dataset = self._getD
+isplayDataset()
+              ^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\graphicsI
+tems\PlotDataItem.py", 
+line 1556, in 
+_getDisplayDataset
+    if view is None or v
+iew.autoRangeEnabled()[0
+]:
+                       
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\90546\D
+esktop\LeafNIRS Plan\Lea
+fNIRS\venv\Lib\site-pack
+ages\pyqtgraph\widgets\P
+lotWidget.py", line 85, 
+in __getattr__
+    raise 
+AttributeError(attr)
+AttributeError: 
+autoRangeEnabled
+[Step 002]   SAVED: 002_after_load.png  (1400x850)
+[Step 002]   SAVED: 002_graph_raw_after_load.png  (1114x560)
+[Step 002]   OK: Data loaded
+[Step 002]   OK: 120 channels
+[Step 002]   OK: 5 stimuli
+[Step 002]   OK: Apply All enabled
+[Step 003] RAW ÔÇö select All channels
+[Step 003]   SAVED: 003_graph_raw_all_channels.png  (1114x560)
+[Step 003]   EXCEPTION: '_ConcentrationPairWidget' object has no attribute 'pair_cb'
+[Step 003] Traceback (most recent call last):
+  File "c:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\tests\test_gui_automated.py", line 85, in run_all
+    self.test_03_raw_channel_controls()
+  File "c:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\tests\test_gui_automated.py", line 149, in test_03_raw_channel_controls
+    visible = sum(1 for pw in gw._pair_widgets if pw.pair_cb.isChecked())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\tests\test_gui_automated.py", line 149, in <genexpr>
+    visible = sum(1 for pw in gw._pair_widgets if pw.pair_cb.isChecked())
+                                                  ^^^^^^^^^^
+AttributeError: '_ConcentrationPairWidget' object has no attribute 'pair_cb'. Did you mean: 'pair_idx'?
+
+[Step 003] 
+[Step 003] ============================================================
+[Step 003] RESULTS: 3 steps, 1 failures
+[Step 003]   Ô£ù Step 3: EXCEPTION '_ConcentrationPairWidget' object has no attribute 'pair_cb'
+[Step 003] ============================================================
+
+Log saved to: c:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\tests\..\test_screenshots\test_log.txt
+Screenshots in: c:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\tests\..\test_screenshots

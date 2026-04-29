@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import os
 
+import numpy as np
+
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
     QAction, QFileDialog, QMessageBox, QStatusBar, QLabel,
-    QMenuBar, QSplitter, QFrame, QScrollArea,
+    QMenuBar, QSplitter, QFrame, QScrollArea, QTabWidget,
 )
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QFont, QIcon
@@ -16,6 +18,8 @@ from gui.file_info_panel import FileInfoPanel
 from gui.graph_widget import GraphWidget
 from gui.processing_panel import ProcessingPanel
 from gui.epoch_viewer import EpochViewer
+from gui.probe_map_widget import ProbeMapWidget
+from gui.brain_viewer_widget import BrainViewerWidget
 from processing.pipeline import ProcessingPipeline, PipelineState
 from processing.epoch_extraction import compute_condition_average
 
@@ -162,6 +166,8 @@ class MainWindow(QMainWindow):
         self._graph = GraphWidget()
         self._epoch_viewer = EpochViewer()
         self._epoch_viewer.setMaximumHeight(280)
+        self._probe_map = ProbeMapWidget()
+        self._brain_viewer = BrainViewerWidget()
 
         v_splitter = QSplitter(Qt.Vertical)
         v_splitter.addWidget(self._graph)
@@ -170,8 +176,31 @@ class MainWindow(QMainWindow):
         v_splitter.setStretchFactor(1, 1)
         v_splitter.setSizes([600, 250])
 
+        self._glm_tabs = QTabWidget()
+        self._glm_tabs.setStyleSheet("""
+            QTabWidget::pane { border: 1px solid #3e3e42; background: #1e1e1e; }
+            QTabBar::tab {
+                background: #2d2d30; color: #abb2bf; padding: 6px 14px;
+                border: 1px solid #3e3e42; border-bottom: none;
+                margin-right: 2px; border-top-left-radius: 4px; border-top-right-radius: 4px;
+            }
+            QTabBar::tab:selected { background: #094771; color: #fff; }
+            QTabBar::tab:hover { background: #3e3e42; }
+        """)
+        self._glm_tabs.addTab(self._probe_map, "📍 2D Probe Map")
+        self._glm_tabs.addTab(self._brain_viewer, "🧠 3D Brain")
+        self._glm_tabs.setVisible(False)
+
+        h_right_splitter = QSplitter(Qt.Horizontal)
+        h_right_splitter.addWidget(v_splitter)
+        h_right_splitter.addWidget(self._glm_tabs)
+        h_right_splitter.setStretchFactor(0, 3)
+        h_right_splitter.setStretchFactor(1, 1)
+        h_right_splitter.setSizes([900, 0])
+        self._h_right_splitter = h_right_splitter
+
         splitter.addWidget(left_panel)
-        splitter.addWidget(v_splitter)
+        splitter.addWidget(h_right_splitter)
         splitter.setStretchFactor(0, 0)
         splitter.setStretchFactor(1, 1)
         splitter.setSizes([280, 1120])
@@ -217,7 +246,7 @@ class MainWindow(QMainWindow):
         loader_menu = view_menu.addMenu("SNIRF &Loader")
         self._loader_lib_action = QAction("snirf library (Method A)", self, checkable=True)
         self._loader_h5py_action = QAction("h5py raw (Method B)", self, checkable=True)
-        self._loader_h5py_action.setChecked(True)
+        self._loader_lib_action.setChecked(True)
         self._loader_lib_action.triggered.connect(lambda: self._switch_loader("snirf-library"))
         self._loader_h5py_action.triggered.connect(lambda: self._switch_loader("h5py-raw"))
         loader_menu.addAction(self._loader_lib_action)
@@ -251,6 +280,7 @@ class MainWindow(QMainWindow):
             lambda: self._on_switch_view(PipelineState.CONCENTRATION))
 
         self._epoch_viewer.compute_requested.connect(self._on_compute_epochs)
+        self._processing_panel.run_glm_clicked.connect(self._on_run_glm)
 
     def _on_open_file(self):
         filepath, _ = QFileDialog.getOpenFileName(
@@ -315,6 +345,9 @@ class MainWindow(QMainWindow):
         self._file_info.clear_info()
         self._graph.clear_plot()
         self._epoch_viewer.clear()
+        self._probe_map.clear()
+        self._brain_viewer.clear()
+        self._glm_tabs.setVisible(False)
         self._processing_panel.set_enabled(False)
         self._update_status("Ready — open a .snirf file to begin")
         self._file_label.setText("")
@@ -442,6 +475,9 @@ class MainWindow(QMainWindow):
             return
         self._pipeline.reset()
         self._graph.plot_data(self._current_data)
+        self._probe_map.clear()
+        self._brain_viewer.clear()
+        self._glm_tabs.setVisible(False)
         self._sync_processing_state()
         self._update_status("Reset to raw intensity")
 
@@ -515,3 +551,43 @@ class MainWindow(QMainWindow):
         except Exception as e:
             import traceback; traceback.print_exc()
             self._on_error(f"Block averaging failed: {e}")
+
+    def _on_run_glm(self):
+        """Run GLM statistical analysis on concentration data."""
+        if not self._pipeline or not self._current_data:
+            return
+
+        r = self._pipeline.result
+        if r.hbo is None or r.hbr is None:
+            self._on_error(
+                "HbO/HbR data required for GLM.\n"
+                "Run the full pipeline first (Apply All)."
+            )
+            return
+
+        if not self._current_data.stimuli:
+            self._on_error("No stimulus conditions found in this file.")
+            return
+
+        self._update_status("Running GLM analysis...")
+        try:
+            glm_hbo, glm_hbr = self._pipeline.run_glm(self._current_data.stimuli)
+            n_cond = len(glm_hbo.contrast_names)
+            n_pairs = len(glm_hbo.pair_labels)
+            n_sig = int(np.sum(glm_hbo.p_value < 0.05))
+            self._probe_map.set_glm_results(
+                glm_hbo, glm_hbr, self._current_data.probe, self._current_data.channels,
+            )
+            self._brain_viewer.set_glm_results(
+                glm_hbo, glm_hbr, self._current_data.probe, self._current_data.channels,
+            )
+            self._glm_tabs.setVisible(True)
+            self._h_right_splitter.setSizes([700, 400])
+            self._sync_processing_state()
+            self._update_status(
+                f"GLM: {n_cond} conditions × {n_pairs} pairs — "
+                f"{n_sig} significant (p<0.05)"
+            )
+        except Exception as e:
+            import traceback; traceback.print_exc()
+            self._on_error(f"GLM analysis failed: {e}")

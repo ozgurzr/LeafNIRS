@@ -9,8 +9,8 @@ import numpy as np
 from data_io.snirf_loader_base import ChannelInfo, ProbeGeometry
 
 
-# Molar extinction coefficients (mm⁻¹/(mM)) for HbO₂ and HHb.
-# Source: Scott Prahl (https://omlc.org/spectra/hemoglobin/)
+# Molar extinction coefficients [mm^-1/(mM)] for HbO2 and HHb.
+# Source: Scott Prahl, https://omlc.org/spectra/hemoglobin/
 _EXTINCTION_TABLE: dict[int, tuple[float, float]] = {
     690:  (0.000956,  0.005186),
     700:  (0.001058,  0.004636),
@@ -22,7 +22,7 @@ _EXTINCTION_TABLE: dict[int, tuple[float, float]] = {
     770:  (0.002156,  0.002020),
     780:  (0.002500,  0.001844),
     790:  (0.002952,  0.001716),
-    800:  (0.003452,  0.001618),   # isosbestic point
+    800:  (0.003452,  0.001618),   # isosbestic
     810:  (0.003852,  0.001556),
     820:  (0.004204,  0.001516),
     830:  (0.004540,  0.001504),
@@ -69,8 +69,7 @@ def get_extinction_coefficients(
     return E
 
 
-# DPF values for adult head (~age 25).
-# Scholkmann & Wolf (2013).
+# DPF values for adult head (~age 25). Scholkmann & Wolf (2013).
 _DPF_TABLE: dict[int, float] = {
     690: 6.51, 700: 6.40, 720: 6.20, 730: 6.10,
     740: 5.99, 750: 5.89, 760: 5.79, 770: 5.68,

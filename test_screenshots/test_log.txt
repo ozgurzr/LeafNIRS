@@ -1,0 +1,163 @@
+[000] ============================================================
+[000] LeafNIRS Automated GUI Test — 20260430_002038
+[000] ============================================================
+[001] INITIAL STATE
+[001]   IMG: 001_initial.png
+[001]   OK: No data
+[001]   OK: Apply All disabled
+[002] MANUAL MODE + LOAD
+[002]   IMG: 002_loaded_manual.png
+[002]   IMG: 002_graph_raw_loaded.png
+[002]   OK: Data loaded
+[002]   OK: 120 ch
+[002]   OK: Raw mode
+[003] RAW — All
+[003]   IMG: 003_graph_raw_all.png
+[003]   OK: All checked
+[003]   OK: Has data
+[004] RAW — None
+[004]   IMG: 004_graph_raw_none.png
+[004]   OK: None checked
+[004]   OK: Empty
+[005] RAW — First 10
+[005]   IMG: 005_graph_raw_first10.png
+[005]   OK: 10 checked
+[006] RAW — First 60
+[006]   IMG: 006_graph_raw_first60.png
+[006]   OK: Has data
+[007] RAW — WL1 only
+[007]   IMG: 007_graph_raw_wl1.png
+[008] RAW — WL2 only
+[008]   IMG: 008_graph_raw_wl2.png
+[009] RAW — Both WL
+[009]   IMG: 009_graph_raw_wl_both.png
+[010] RAW — Stacked
+[010]   IMG: 010_graph_raw_stacked.png
+[010]   OK: Stacked on
+[010]   OK: Has data
+[011] RAW — Overlaid
+[011]   IMG: 011_graph_raw_overlaid.png
+[011]   OK: Stacked off
+[011]   OK: Has data
+[012] OD conversion
+[012]   IMG: 012_graph_od.png
+[012]   OK: OD exists
+[012]   OK: Has data
+[013] TDDR correction
+[013]   IMG: 013_graph_corrected.png
+[013]   OK: Corrected exists
+[013]   OK: Has data
+[014] Bandpass filter
+[014]   IMG: 014_graph_filtered.png
+[014]   OK: Filtered exists
+[014]   OK: Has data
+[015] MBLL (HbO/HbR)
+[015]   IMG: 015_after_mbll.png
+[015]   IMG: 015_graph_conc.png
+[015]   OK: HbO exists
+[015]   OK: HbR exists
+[015]   OK: 60 pairs
+[015]   OK: Conc mode
+[016] CONC — All
+[016]   IMG: 016_graph_conc_all.png
+[016]   OK: All checked
+[016]   OK: Not empty
+[017] CONC — None
+[017]   IMG: 017_graph_conc_none.png
+[017]   OK: Empty
+[018] CONC — First 5
+[018]   IMG: 018_graph_conc_first5.png
+[018]   OK: Has data
+[019] CONC — First 30
+[019]   IMG: 019_graph_conc_first30.png
+[020] CONC — Stacked
+[020]   IMG: 020_graph_conc_stacked.png
+[020]   OK: Stacked on
+[020]   OK: Not empty
+[021] CONC — Overlaid
+[021]   IMG: 021_graph_conc_overlaid.png
+[021]   OK: Stacked off
+[021]   OK: Not empty
+[022] GLM analysis
+[022]   IMG: 022_after_glm.png
+[022]   IMG: 022_graph_glm_graph.png
+[022]   IMG: 022_probe2d_glm_default.png
+[022]   IMG: 022_brain3d_glm_default.png
+[022]   OK: GLM tabs visible
+[023] GLM 2D — tab select
+[023]   IMG: 023_probe2d_tab_2d.png
+[024] GLM 2D — cond 2
+[024]   IMG: 024_probe2d_cond2.png
+[025] GLM 2D — HbR
+[025]   IMG: 025_probe2d_hbr.png
+[026] GLM 2D — p<0.01
+[026]   IMG: 026_probe2d_p001.png
+[027] GLM 2D — p<0.10
+[027]   IMG: 027_probe2d_p010.png
+[028] GLM 3D — tab select
+[028]   IMG: 028_brain3d_tab_3d.png
+[029] GLM 3D — cond 3
+[029]   IMG: 029_brain3d_cond3.png
+[030] GLM 3D — HbR
+[030]   IMG: 030_brain3d_hbr.png
+[031] RESET to Raw
+[031]   IMG: 031_after_reset.png
+[031]   IMG: 031_graph_reset_raw.png
+[031]   OK: Not conc mode
+[031]   OK: GLM hidden
+[031]   OK: Has data
+[032] APPLY ALL
+[032]   IMG: 032_after_apply_all.png
+[032]   IMG: 032_graph_apply_all_conc.png
+[032]   OK: HbO exists
+[032]   OK: Conc mode
+[032]   OK: Has data
+[033] APPLY ALL + All channels
+[033]   IMG: 033_graph_apply_all_ch_all.png
+[033]   OK: Not empty
+[034] APPLY ALL + Stacked all
+[034]   IMG: 034_graph_apply_all_stacked.png
+[034]   OK: Not empty
+[035] APPLY ALL + Overlaid 5
+[035]   IMG: 035_graph_apply_all_ov5.png
+[036] GLM after Apply All
+[036]   IMG: 036_glm_apply_all.png
+[036]   IMG: 036_probe2d_after_apply_all.png
+[036]   IMG: 036_brain3d_after_apply_all.png
+[036]   OK: GLM tabs visible
+[037] CLOSE file
+[037]   IMG: 037_closed.png
+[037]   OK: Data cleared
+[037]   OK: GLM hidden
+[038] REOPEN manual
+[038]   IMG: 038_graph_reopened_raw.png
+[038]   OK: Data back
+[039] REOPEN + Apply All
+[039]   IMG: 039_graph_reopened_conc.png
+[039]   OK: Pipeline OK
+[040] REOPEN + GLM
+[040]   IMG: 040_probe2d_reopened.png
+[040]   IMG: 040_brain3d_reopened.png
+[040]   OK: GLM works after reopen
+[041] AUTO MODE — close + switch + load
+[041]   IMG: 041_auto_loaded.png
+[041]   IMG: 041_graph_auto_conc.png
+[041]   OK: Auto -> conc
+[041]   OK: Auto HbO
+[041]   OK: Has data
+[042] AUTO — All channels
+[042]   IMG: 042_graph_auto_all.png
+[042]   OK: Not empty
+[043] AUTO — Stacked
+[043]   IMG: 043_graph_auto_stacked.png
+[043]   OK: Not empty
+[044] AUTO — GLM
+[044]   IMG: 044_auto_glm.png
+[044]   IMG: 044_probe2d_auto_glm.png
+[044]   IMG: 044_brain3d_auto_glm.png
+[044]   OK: Auto GLM works
+[044] 
+[044] ============================================================
+[044] RESULTS: 44 steps, 0 failures
+[044]   ALL PASSED
+[044] ============================================================
