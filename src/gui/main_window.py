@@ -22,6 +22,7 @@ from gui.probe_map_widget import ProbeMapWidget
 from gui.brain_viewer_widget import BrainViewerWidget
 from processing.pipeline import ProcessingPipeline, PipelineState
 from processing.epoch_extraction import compute_condition_average
+from processing.export_manager import export_csv, export_matlab
 
 
 _DARK_STYLE = """
@@ -233,6 +234,22 @@ class MainWindow(QMainWindow):
         close_action.setShortcut("Ctrl+W")
         close_action.triggered.connect(self._on_close_file)
         file_menu.addAction(close_action)
+
+        file_menu.addSeparator()
+
+        self._export_csv_action = QAction("Export as &CSV…", self)
+        self._export_csv_action.setShortcut("Ctrl+Shift+C")
+        self._export_csv_action.setStatusTip("Export current data to CSV")
+        self._export_csv_action.setEnabled(False)
+        self._export_csv_action.triggered.connect(self._on_export_csv)
+        file_menu.addAction(self._export_csv_action)
+
+        self._export_mat_action = QAction("Export as &MATLAB…", self)
+        self._export_mat_action.setShortcut("Ctrl+Shift+M")
+        self._export_mat_action.setStatusTip("Export current data to .mat file")
+        self._export_mat_action.setEnabled(False)
+        self._export_mat_action.triggered.connect(self._on_export_matlab)
+        file_menu.addAction(self._export_mat_action)
 
         file_menu.addSeparator()
 
@@ -507,6 +524,9 @@ class MainWindow(QMainWindow):
                 has_corrected=r.corrected is not None,
                 has_concentration=r.hbo is not None,
             )
+            has_data = self._current_data is not None
+            self._export_csv_action.setEnabled(has_data)
+            self._export_mat_action.setEnabled(has_data)
 
     def _update_status(self, text: str):
         self._status_label.setText(f"  {text}")
@@ -591,3 +611,61 @@ class MainWindow(QMainWindow):
         except Exception as e:
             import traceback; traceback.print_exc()
             self._on_error(f"GLM analysis failed: {e}")
+
+    def _on_export_csv(self):
+        """Export current pipeline view to CSV."""
+        if not self._pipeline or not self._current_data:
+            return
+        filepath, _ = QFileDialog.getSaveFileName(
+            self, "Export as CSV", "", "CSV Files (*.csv);;All Files (*)",
+        )
+        if not filepath:
+            return
+        try:
+            r = self._pipeline.result
+            is_conc = r.state == PipelineState.CONCENTRATION and r.hbo is not None
+            files = export_csv(
+                filepath=filepath,
+                time=self._current_data.time,
+                data=r.hbo if is_conc else r.active_data,
+                data_label=r.state_label,
+                pair_labels=r.pair_labels if is_conc else None,
+                channels=self._current_data.channels if not is_conc else None,
+                hbr=r.hbr if is_conc else None,
+                glm_hbo=r.glm_hbo,
+                glm_hbr=r.glm_hbr,
+            )
+            self._update_status(f"Exported {len(files)} CSV file(s)")
+        except Exception as e:
+            import traceback; traceback.print_exc()
+            self._on_error(f"CSV export failed: {e}")
+
+    def _on_export_matlab(self):
+        """Export current pipeline view to MATLAB .mat."""
+        if not self._pipeline or not self._current_data:
+            return
+        filepath, _ = QFileDialog.getSaveFileName(
+            self, "Export as MATLAB", "", "MATLAB Files (*.mat);;All Files (*)",
+        )
+        if not filepath:
+            return
+        try:
+            r = self._pipeline.result
+            is_conc = r.state == PipelineState.CONCENTRATION and r.hbo is not None
+            export_matlab(
+                filepath=filepath,
+                time=self._current_data.time,
+                data=r.hbo if is_conc else r.active_data,
+                data_label=r.state_label,
+                sampling_rate=self._current_data.sampling_rate,
+                pair_labels=r.pair_labels if is_conc else None,
+                channels=self._current_data.channels if not is_conc else None,
+                hbr=r.hbr if is_conc else None,
+                probe=self._current_data.probe,
+                glm_hbo=r.glm_hbo,
+                glm_hbr=r.glm_hbr,
+            )
+            self._update_status(f"Exported MATLAB file: {os.path.basename(filepath)}")
+        except Exception as e:
+            import traceback; traceback.print_exc()
+            self._on_error(f"MATLAB export failed: {e}")

@@ -3,11 +3,15 @@
 Produces:
   - CSV files with block-averaged HbO/HbR per condition per run
   - Publication-quality plots of HRF per condition
-  - Summary log for the professor
+  - Summary log
+
+Usage:
+    python scripts/batch_block_average.py --data-root ./data --output ./results
 """
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+import argparse
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -18,20 +22,39 @@ from data_io.snirf_loader_h5py import SNIRFLoaderH5py
 from processing.pipeline import ProcessingPipeline
 from processing.epoch_extraction import compute_condition_average
 
-# ── Configuration ──
-DATA_ROOT = Path(r"C:\Users\90546\Desktop\LeafNIRS Plan\data\DATA_MotorNeuron")
-OUT_DIR = Path(r"C:\Users\90546\Desktop\LeafNIRS Plan\LeafNIRS\block_average_results")
-OUT_DIR.mkdir(exist_ok=True)
 
-SUBJECTS = ["SUBJID_6082", "SUBJID_6083", "SUBJID_6084"]
-RUNS = ["run1", "run2", "run3"]
+def parse_args():
+    parser = argparse.ArgumentParser(description="LeafNIRS batch block averaging")
+    parser.add_argument("--data-root",
+                        default=r"C:\Users\90546\Desktop\LeafNIRS Plan\data\DATA_MotorNeuron",
+                        help="Root directory containing subject folders")
+    parser.add_argument("--output", default="./block_average_results",
+                        help="Output directory for CSVs and plots")
+    parser.add_argument("--subjects", nargs="+",
+                        default=["SUBJID_6082", "SUBJID_6083", "SUBJID_6084"])
+    parser.add_argument("--runs", nargs="+", default=["run1", "run2", "run3"])
+    parser.add_argument("--pre-sec", type=float, default=2.0)
+    parser.add_argument("--post-sec", type=float, default=20.0)
+    parser.add_argument("--filter-low", type=float, default=0.01)
+    parser.add_argument("--filter-high", type=float, default=0.1)
+    parser.add_argument("--filter-order", type=int, default=3)
+    return parser.parse_args()
 
-PRE_SEC = 2.0
-POST_SEC = 20.0
 
-FILTER_LOW = 0.01
-FILTER_HIGH = 0.1
-FILTER_ORDER = 3
+_args = parse_args()
+DATA_ROOT = Path(_args.data_root)
+OUT_DIR = Path(_args.output)
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+SUBJECTS = _args.subjects
+RUNS = _args.runs
+
+PRE_SEC = _args.pre_sec
+POST_SEC = _args.post_sec
+
+FILTER_LOW = _args.filter_low
+FILTER_HIGH = _args.filter_high
+FILTER_ORDER = _args.filter_order
 
 log_lines = []
 
